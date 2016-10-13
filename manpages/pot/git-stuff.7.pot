@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the live-config package.
+# This file is distributed under the same license as the git-stuff package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2011-10-08 13:15+0300\n"
+"Project-Id-Version: git-stuff VERSION\n"
+"POT-Creation-Date: 2011-11-23 23:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,70 +17,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: TH
-#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-debian-add.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9
+#: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
 msgid "GIT-STUFF"
 msgstr ""
 
 #. type: TH
-#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-debian-add.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9
+#: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "2011-10-08"
+msgid "2011-11-23"
 msgstr ""
 
 #. type: TH
-#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-debian-add.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9
+#: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "8"
+msgid "9"
 msgstr ""
 
 #. type: TH
-#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-debian-add.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9
+#: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
 msgid "Git Stuff"
 msgstr ""
 
 #. type: SH
-#: en/git-amend-all.1:11 en/git-checkout-branches.1:11 en/git-commit-lazy.1:11
-#: en/git-debian-add.1:11 en/git-stuff.7:11
+#: en/git-amend-all.1:11 en/git-checkout-branches.1:11
+#: en/git-cherry-pick-recursive.1:11 en/git-commit-lazy.1:11
+#: en/git-debian-add.1:11 en/git-stuff.7:11 en/git-whoami.1:11
 #, no-wrap
 msgid "NAME"
 msgstr ""
 
 #. type: SH
-#: en/git-amend-all.1:17 en/git-checkout-branches.1:17 en/git-commit-lazy.1:17
-#: en/git-debian-add.1:17 en/git-stuff.7:14
+#: en/git-amend-all.1:17 en/git-checkout-branches.1:17
+#: en/git-cherry-pick-recursive.1:17 en/git-commit-lazy.1:17
+#: en/git-debian-add.1:17 en/git-stuff.7:14 en/git-whoami.1:17
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr ""
 
 #. type: SH
-#: en/git-amend-all.1:23 en/git-checkout-branches.1:23 en/git-commit-lazy.1:23
-#: en/git-debian-add.1:24 en/git-stuff.7:29
+#: en/git-amend-all.1:23 en/git-checkout-branches.1:23
+#: en/git-cherry-pick-recursive.1:26 en/git-commit-lazy.1:23
+#: en/git-debian-add.1:24 en/git-stuff.7:35 en/git-whoami.1:25
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
 
 #. type: Plain text
-#: en/git-amend-all.1:25 en/git-checkout-branches.1:25 en/git-commit-lazy.1:25
-#: en/git-debian-add.1:26 en/git-stuff.7:31
+#: en/git-amend-all.1:25 en/git-checkout-branches.1:25
+#: en/git-cherry-pick-recursive.1:28 en/git-commit-lazy.1:25
+#: en/git-debian-add.1:26 en/git-stuff.7:37 en/git-whoami.1:27
 msgid "I<git>(1)"
 msgstr ""
 
 #. type: SH
-#: en/git-amend-all.1:30 en/git-checkout-branches.1:30 en/git-commit-lazy.1:30
-#: en/git-debian-add.1:31 en/git-stuff.7:32
+#: en/git-amend-all.1:30 en/git-checkout-branches.1:30
+#: en/git-cherry-pick-recursive.1:33 en/git-commit-lazy.1:30
+#: en/git-debian-add.1:31 en/git-stuff.7:38 en/git-whoami.1:32
 #, no-wrap
 msgid "BUGS"
 msgstr ""
 
 #. type: Plain text
-#: en/git-amend-all.1:32 en/git-checkout-branches.1:32 en/git-commit-lazy.1:32
-#: en/git-debian-add.1:33 en/git-stuff.7:34
+#: en/git-amend-all.1:32 en/git-checkout-branches.1:32
+#: en/git-cherry-pick-recursive.1:35 en/git-commit-lazy.1:32
+#: en/git-debian-add.1:33 en/git-stuff.7:40 en/git-whoami.1:34
 msgid ""
 "Bugs can be reported by submitting a bugreport for the git-stuff package in "
 "the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
@@ -88,15 +98,17 @@ msgid ""
 msgstr ""
 
 #. type: SH
-#: en/git-amend-all.1:33 en/git-checkout-branches.1:33 en/git-commit-lazy.1:33
-#: en/git-debian-add.1:34 en/git-stuff.7:35
+#: en/git-amend-all.1:33 en/git-checkout-branches.1:33
+#: en/git-cherry-pick-recursive.1:36 en/git-commit-lazy.1:33
+#: en/git-debian-add.1:34 en/git-stuff.7:41 en/git-whoami.1:35
 #, no-wrap
 msgid "AUTHOR"
 msgstr ""
 
 #. type: Plain text
-#: en/git-amend-all.1:34 en/git-checkout-branches.1:34 en/git-commit-lazy.1:34
-#: en/git-debian-add.1:35 en/git-stuff.7:36
+#: en/git-amend-all.1:34 en/git-checkout-branches.1:34
+#: en/git-cherry-pick-recursive.1:37 en/git-commit-lazy.1:34
+#: en/git-debian-add.1:35 en/git-stuff.7:42
 msgid ""
 "git-stuff was written by Daniel Baumann E<lt>I<daniel.baumann@progress-"
 "technologies.net>E<gt>."
@@ -150,23 +162,58 @@ msgstr ""
 #. type: IP
 #: en/git-stuff.7:24
 #, no-wrap
-msgid "I<git-commit-lazy>(1)"
+msgid "I<git-cherry-pick>(1)"
 msgstr ""
 
 #. type: Plain text
 #: en/git-stuff.7:26
-msgid "creates a new commit with all untracked files and changes."
+msgid "does a cherry-pick for a commit and each all its children."
 msgstr ""
 
 #. type: IP
 #: en/git-stuff.7:26
 #, no-wrap
-msgid "I<git-debian-add>(1)"
+msgid "I<git-commit-lazy>(1)"
 msgstr ""
 
 #. type: Plain text
 #: en/git-stuff.7:28
+msgid "creates a new commit with all untracked files and changes."
+msgstr ""
+
+#. type: IP
+#: en/git-stuff.7:28
+#, no-wrap
+msgid "I<git-debian-add>(1)"
+msgstr ""
+
+#. type: Plain text
+#: en/git-stuff.7:30
 msgid ""
 "creates a new commit and tag with all untracked files and changes as new "
 "debian version."
+msgstr ""
+
+#. type: IP
+#: en/git-stuff.7:30
+#, no-wrap
+msgid "I<git-debian-changelog>(1)"
+msgstr ""
+
+#. type: Plain text
+#: en/git-stuff.7:32
+msgid ""
+"creates a new section in debian/changelog with all entries since the last "
+"release."
+msgstr ""
+
+#. type: IP
+#: en/git-stuff.7:32
+#, no-wrap
+msgid "I<git-whoami>(1)"
+msgstr ""
+
+#. type: Plain text
+#: en/git-stuff.7:34
+msgid "tells about author and committer information."
 msgstr ""

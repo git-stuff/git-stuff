@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: git-stuff 8\n"
-"POT-Creation-Date: 2011-10-08 13:15+0300\n"
+"Project-Id-Version: git-stuff 9\n"
+"POT-Creation-Date: 2011-11-23 22:59+0100\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel.baumann@progress-technologies.net>\n"
 "Language-Team: none\n"
@@ -16,96 +16,110 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: TH
-#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-debian-add.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9
+#: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
 msgid "GIT-STUFF"
 msgstr "GIT-STUFF"
 
 #. type: TH
-#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-debian-add.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9
+#: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "2011-10-08"
-msgstr "08.10.2011"
+msgid "2011-11-23"
+msgstr "23.11.2011"
 
 #. type: TH
-#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-debian-add.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9
+#: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "8"
-msgstr "8"
+msgid "9"
+msgstr "9"
 
 #. type: TH
-#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-debian-add.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9
+#: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
 msgid "Git Stuff"
 msgstr "Git Stuff"
 
 #. type: SH
-#: en/git-amend-all.1:11 en/git-checkout-branches.1:11 en/git-commit-lazy.1:11
-#: en/git-debian-add.1:11 en/git-stuff.7:11
+#: en/git-amend-all.1:11 en/git-checkout-branches.1:11
+#: en/git-cherry-pick-recursive.1:11 en/git-commit-lazy.1:11
+#: en/git-debian-add.1:11 en/git-stuff.7:11 en/git-whoami.1:11
 #, no-wrap
 msgid "NAME"
 msgstr "NAME"
 
 #. type: SH
-#: en/git-amend-all.1:14 en/git-checkout-branches.1:14 en/git-commit-lazy.1:14
-#: en/git-debian-add.1:14
+#: en/git-amend-all.1:14 en/git-checkout-branches.1:14
+#: en/git-cherry-pick-recursive.1:14 en/git-commit-lazy.1:14
+#: en/git-debian-add.1:14 en/git-whoami.1:14
 #, no-wrap
 msgid "SYNOPSIS"
 msgstr "SYNTAX"
 
 #. type: SH
-#: en/git-amend-all.1:17 en/git-checkout-branches.1:17 en/git-commit-lazy.1:17
-#: en/git-debian-add.1:17 en/git-stuff.7:14
+#: en/git-amend-all.1:17 en/git-checkout-branches.1:17
+#: en/git-cherry-pick-recursive.1:17 en/git-commit-lazy.1:17
+#: en/git-debian-add.1:17 en/git-stuff.7:14 en/git-whoami.1:17
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "BESCHREIBUNG"
 
 #. type: SH
-#: en/git-amend-all.1:20 en/git-checkout-branches.1:20 en/git-commit-lazy.1:20
-#: en/git-debian-add.1:20
+#: en/git-amend-all.1:20 en/git-checkout-branches.1:20
+#: en/git-cherry-pick-recursive.1:20 en/git-commit-lazy.1:20
+#: en/git-debian-add.1:20 en/git-whoami.1:22
 #, no-wrap
 msgid "OPTIONS"
 msgstr "OPTIONEN"
 
 #. type: SH
-#: en/git-amend-all.1:23 en/git-checkout-branches.1:23 en/git-commit-lazy.1:23
-#: en/git-debian-add.1:24 en/git-stuff.7:29
+#: en/git-amend-all.1:23 en/git-checkout-branches.1:23
+#: en/git-cherry-pick-recursive.1:26 en/git-commit-lazy.1:23
+#: en/git-debian-add.1:24 en/git-stuff.7:35 en/git-whoami.1:25
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "SIEHE AUCH"
 
 #. type: Plain text
-#: en/git-amend-all.1:25 en/git-checkout-branches.1:25 en/git-commit-lazy.1:25
-#: en/git-debian-add.1:26 en/git-stuff.7:31
+#: en/git-amend-all.1:25 en/git-checkout-branches.1:25
+#: en/git-cherry-pick-recursive.1:28 en/git-commit-lazy.1:25
+#: en/git-debian-add.1:26 en/git-stuff.7:37 en/git-whoami.1:27
 msgid "I<git>(1)"
 msgstr "I<git>(1)"
 
 #. type: Plain text
-#: en/git-amend-all.1:27 en/git-checkout-branches.1:27 en/git-commit-lazy.1:27
-#: en/git-debian-add.1:28
+#: en/git-amend-all.1:27 en/git-checkout-branches.1:27
+#: en/git-cherry-pick-recursive.1:30 en/git-commit-lazy.1:27
+#: en/git-debian-add.1:28 en/git-whoami.1:29
 msgid "I<git-stuff>(7)"
 msgstr "I<git-stuff>(7)"
 
 #. type: Plain text
-#: en/git-amend-all.1:29 en/git-checkout-branches.1:29 en/git-commit-lazy.1:29
-#: en/git-debian-add.1:30
+#: en/git-amend-all.1:29 en/git-checkout-branches.1:29
+#: en/git-cherry-pick-recursive.1:32 en/git-commit-lazy.1:29
+#: en/git-debian-add.1:30 en/git-whoami.1:31
 msgid "This program is a part of git-stuff."
 msgstr "Dieses Programm ist Teil von git-stuff."
 
 #. type: SH
-#: en/git-amend-all.1:30 en/git-checkout-branches.1:30 en/git-commit-lazy.1:30
-#: en/git-debian-add.1:31 en/git-stuff.7:32
+#: en/git-amend-all.1:30 en/git-checkout-branches.1:30
+#: en/git-cherry-pick-recursive.1:33 en/git-commit-lazy.1:30
+#: en/git-debian-add.1:31 en/git-stuff.7:38 en/git-whoami.1:32
 #, no-wrap
 msgid "BUGS"
 msgstr "FEHLER"
 
 #. type: Plain text
-#: en/git-amend-all.1:32 en/git-checkout-branches.1:32 en/git-commit-lazy.1:32
-#: en/git-debian-add.1:33 en/git-stuff.7:34
+#: en/git-amend-all.1:32 en/git-checkout-branches.1:32
+#: en/git-cherry-pick-recursive.1:35 en/git-commit-lazy.1:32
+#: en/git-debian-add.1:33 en/git-stuff.7:40 en/git-whoami.1:34
 msgid ""
 "Bugs can be reported by submitting a bugreport for the git-stuff package in "
 "the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
@@ -116,15 +130,17 @@ msgstr ""
 "oder durch Senden einer E-Mail an den Autor mitgeteilt werden."
 
 #. type: SH
-#: en/git-amend-all.1:33 en/git-checkout-branches.1:33 en/git-commit-lazy.1:33
-#: en/git-debian-add.1:34 en/git-stuff.7:35
+#: en/git-amend-all.1:33 en/git-checkout-branches.1:33
+#: en/git-cherry-pick-recursive.1:36 en/git-commit-lazy.1:33
+#: en/git-debian-add.1:34 en/git-stuff.7:41 en/git-whoami.1:35
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTOR"
 
 #. type: Plain text
-#: en/git-amend-all.1:34 en/git-checkout-branches.1:34 en/git-commit-lazy.1:34
-#: en/git-debian-add.1:35 en/git-stuff.7:36
+#: en/git-amend-all.1:34 en/git-checkout-branches.1:34
+#: en/git-cherry-pick-recursive.1:37 en/git-commit-lazy.1:34
+#: en/git-debian-add.1:35 en/git-stuff.7:42
 msgid ""
 "git-stuff was written by Daniel Baumann E<lt>I<daniel.baumann@progress-"
 "technologies.net>E<gt>."
@@ -136,10 +152,10 @@ msgstr ""
 #: en/git-commit-lazy.1:13
 msgid ""
 "B<git-commit-lazy> - creates a new commit with all untracked files and "
-"changes."
+"changes"
 msgstr ""
 "B<git-commit-lazy> - erstellt einen neuen Commit mit allen Untracked Dateien "
-"und allen Änderungen."
+"und allen Änderungen"
 
 #. type: Plain text
 #: en/git-commit-lazy.1:16

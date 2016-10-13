@@ -1,3 +1,20 @@
+git-stuff (9-1) unstable; urgency=low
+
+  * Adding git-cherry-pick-recursive script.
+  * Documenting git-cherry-pick-recursive.
+  * Unifying name entries in manpages.
+  * Documenting git-debian-changelog.
+  * Adding g alias for git in git-stuff profile.
+  * Updating todo file.
+  * Setting debconf questions to unseen when the answer is read from
+    conffile.
+  * Adding git-whoami script from Peter Eisentraut
+    <peter@eisentraut.org>.
+  * Adding manpage for git-whoami.
+  * Correcting some consistency errors in manpages.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Wed, 23 Nov 2011 23:05:58 +0100
+
 git-stuff (8-1) unstable; urgency=low
 
   * Updating todo file.

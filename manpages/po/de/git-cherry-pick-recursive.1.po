@@ -149,49 +149,49 @@ msgstr ""
 "technologies.net>E<gt> geschrieben."
 
 #. type: Plain text
-#: en/git-debian-add.1:13
+#: en/git-cherry-pick-recursive.1:13
 msgid ""
-"B<git-debian-add> - creates a new commit and tag with all untracked files "
-"and changes as new debian version"
+"B<git-cherry-pick-recursive> - does a cherry-pick for a commit and each all "
+"its children"
 msgstr ""
-"B<git-commit-lazy> - erstellt einen neuen Commit und Tag mit allen Untracked "
-"Dateien und allen Änderungen als neue Debian Version"
+"B<git-cherry-pick-recursive> - eine Id und alle nachfolgenden Commits "
+"mittels cherry-pick übernehmen"
 
 #. type: Plain text
-#: en/git-debian-add.1:16
-msgid "B<git-debian-add> [I<VERSION>]"
-msgstr "B<git-debian-add> [I<VERSION>]"
+#: en/git-cherry-pick-recursive.1:16
+msgid "B<git-cherry-pick-recursive> I<BRANCH> I<ID>"
+msgstr "B<git-cherry-pick-recursive> I<BRANCH> I<ID>"
 
 #. type: Plain text
-#: en/git-debian-add.1:19
+#: en/git-cherry-pick-recursive.1:19
 msgid ""
-"B<git-debian-add> is a program that creates a new commit and tag with all "
-"untracked files and changes as a new debian version using the commit message "
-"'Adding debian version I<VERSION>.' and 'Tagging debian version "
-"I<VERSION>.'. If no version is specified, I<VERSION> is automatically "
-"replaced with the newest version entry (without epoche) from debian/"
-"changelog."
+"B<git-cherry-pick-recursive> is a program that does a cherry-pick for a "
+"specified id and for each of the children commits on a specified branch."
 msgstr ""
-"B<git-debian-add> ist ein Programm das einen neuen Commit und Tag mit der "
-"Message 'Adding debian version I<VERSION>.' und 'Tagging debian version "
-"I<VERSION>.' erstellt, mit allen Untracked Dateien und Änderungen. Ist keine "
-"Version angegeben, wird I<VERSION> automatisch ersetzt mit dem neuesten "
-"Versionseintrag (ohne Epoche) von debian/changelog."
+"B<git-cherry-pick-recursive> ist ein Programm um mittels cherry-pick eine "
+"spezifizierte Id und alle nachfolgenden Commits von einem spezifizierten "
+"Branch übernommen werden sollen."
 
 #. type: IP
-#: en/git-debian-add.1:21
+#: en/git-cherry-pick-recursive.1:21
 #, no-wrap
-msgid "I<VERSION>"
-msgstr "I<VERSION>"
+msgid "I<BRANCH>"
+msgstr "I<BRANCH>"
 
 #. type: Plain text
-#: en/git-debian-add.1:23
-msgid ""
-"git-debian-add uses dpkg-parsechangelog from the dpkg-dev package to "
-"automatically determine the debian version to be added. This can be "
-"overriden by manually specifying the version as first argument."
+#: en/git-cherry-pick-recursive.1:23
+msgid "specifies which branch the children commits should be deduced from."
 msgstr ""
-"git-debian-add benutzt dpkg-parsechangelog aus dem dpkg-dev Paket um "
-"automatisch die hinzuzufügende Debian version zu bestimmen. Dies kann "
-"überschrieben werden indem manuell die Version als erstes Argument angegeben "
-"wird."
+"bezeichnet von welchem Branch die nachfolgenden Commits ermittelt werden "
+"sollen."
+
+#. type: IP
+#: en/git-cherry-pick-recursive.1:23
+#, no-wrap
+msgid "I<ID>"
+msgstr "I<ID>"
+
+#. type: Plain text
+#: en/git-cherry-pick-recursive.1:25
+msgid "specifies which id should be started the cherry-picking from."
+msgstr "bezeichnet ab welcher Id die Commits übernommen werden sollen."

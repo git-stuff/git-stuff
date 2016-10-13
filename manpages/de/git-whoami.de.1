@@ -14,17 +14,21 @@
 .TH GIT\-STUFF 1 23.11.2011 9 "Git Stuff"
 
 .SH NAME
-\fBgit\-checkout\-branches\fP \- checkt alle Remote Branches aus
+\fBgit\-whoami\fP \- gibt Informationen zu Autor und Committer an.
 
 .SH SYNTAX
-\fBgit\-checkout\-branches\fP
+\fBgit\-whoami\fP
 
 .SH BESCHREIBUNG
-\fBgit\-checkout\-branches\fP ist ein Programm das alle Remote Branches eines Git
-Repositories auscheckt.
+\fBgit\-whoami\fP ist ein Program welches Informationen über Autor und Commiter
+ausgibt die für einen allfälligen Commit benutzt würden.
+.PP
+Dies ist besonders nützlich wenn mit vielen verschiedenen Git Repositories
+mit unterschiedlichen Identitäten (Arbeit, Privat, verschiedene Projekte)
+gearbeitet wird. \fBgit\-whoami\fP ist inspiriert von 'bzr whoami'.
 
 .SH OPTIONEN
-git\-checkout\-branches hat keine Optionen.
+git\-whoami hat keine Optionen.
 
 .SH "SIEHE AUCH"
 \fIgit\fP(1)
@@ -40,4 +44,6 @@ oder durch Senden einer E\-Mail an den Autor mitgeteilt werden.
 
 .SH AUTOR
 git\-stuff wurde von Daniel Baumann
-<\fIdaniel.baumann@progress\-technologies.net\fP> geschrieben.
+<\fIdaniel.baumann@progress\-technologies.net\fP> geschrieben,
+git\-whoami wurde von Peter Eisentraut <\fIpeter@eisentraut.org\fP>
+geschrieben.

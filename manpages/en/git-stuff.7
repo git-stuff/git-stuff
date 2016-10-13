@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH GIT\-STUFF 7 2011\-10\-08 8 "Git Stuff"
+.TH GIT\-STUFF 7 2011\-11\-23 9 "Git Stuff"
 
 .SH NAME
 \fBgit\-stuff\fR \- additional Git utilities
@@ -21,10 +21,16 @@
 adds all untracked files and amend all changes to the last commit.
 .IP "\fIgit\-checkout\-branches\fR(1)" 4
 checks out all remote branches.
+.IP "\fIgit\-cherry\-pick\fR(1)" 4
+does a cherry\-pick for a commit and each all its children.
 .IP "\fIgit\-commit\-lazy\fR(1)" 4
 creates a new commit with all untracked files and changes.
 .IP "\fIgit\-debian\-add\fR(1)" 4
 creates a new commit and tag with all untracked files and changes as new debian version.
+.IP "\fIgit\-debian\-changelog\fR(1)" 4
+creates a new section in debian/changelog with all entries since the last release.
+.IP "\fIgit\-whoami\fR(1)" 4
+tells about author and committer information.
 
 .SH SEE ALSO
 \fIgit\fR(1)

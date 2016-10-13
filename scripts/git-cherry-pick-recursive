@@ -1,0 +1,27 @@
+#!/bin/sh
+
+## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+_BRANCH="${1}"
+_ID="${2}"
+
+if [ -z "${_BRANCH}" ] || [ -z "${_ID}" ]
+then
+	echo "Usage: $0 BRANCH ID"
+	exit 1
+fi
+
+_COMMITS="$(git log ${_BRANCH} -- | awk '/^commit / { print $2 }')"
+_COMMITS="$(echo ${_COMMITS} | sed -e "s|${_ID}.*$|${_ID}|" | awk '{ a[NR]=$0 } END { for(i=NR; i; --i) print a[i] } ')"
+
+for _COMMIT in ${_COMMITS}
+do
+	git cherry-pick ${_COMMIT}
+done

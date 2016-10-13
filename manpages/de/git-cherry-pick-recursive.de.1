@@ -14,17 +14,23 @@
 .TH GIT\-STUFF 1 23.11.2011 9 "Git Stuff"
 
 .SH NAME
-\fBgit\-checkout\-branches\fP \- checkt alle Remote Branches aus
+\fBgit\-cherry\-pick\-recursive\fP \- eine Id und alle nachfolgenden Commits
+mittels cherry\-pick übernehmen
 
 .SH SYNTAX
-\fBgit\-checkout\-branches\fP
+\fBgit\-cherry\-pick\-recursive\fP \fIBRANCH\fP \fIID\fP
 
 .SH BESCHREIBUNG
-\fBgit\-checkout\-branches\fP ist ein Programm das alle Remote Branches eines Git
-Repositories auscheckt.
+\fBgit\-cherry\-pick\-recursive\fP ist ein Programm um mittels cherry\-pick eine
+spezifizierte Id und alle nachfolgenden Commits von einem spezifizierten
+Branch übernommen werden sollen.
 
 .SH OPTIONEN
-git\-checkout\-branches hat keine Optionen.
+.IP \fIBRANCH\fP 4
+bezeichnet von welchem Branch die nachfolgenden Commits ermittelt werden
+sollen.
+.IP \fIID\fP 4
+bezeichnet ab welcher Id die Commits übernommen werden sollen.
 
 .SH "SIEHE AUCH"
 \fIgit\fP(1)

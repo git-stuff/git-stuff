@@ -3,6 +3,7 @@
 alias a="git-amend-all"
 alias c="git commit -a"
 alias ch="git cherry-pick"
+alias g="git"
 alias l="git log"
 alias lp="git log -p"
 alias p="git push && git push --tags"

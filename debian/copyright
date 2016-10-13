@@ -2,6 +2,10 @@ Files: *
 Copyright: (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
 License: GPL-3+
 
+Files: scripts/git-whoami
+Copyright: (C) 2011
+License: WTFL
+
 Files: scripts/git-hook-notification-bts
 Copyright: (C) 2009 Adeodato Simó <dato@net.com.org.es>
 License: MIT
@@ -74,3 +78,18 @@ License: MIT
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  DEALINGS IN THE SOFTWARE.
+
+License: WTFL
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+ .
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+ .
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+ .
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+ .
+  0. You just DO WHAT THE FUCK YOU WANT TO.

@@ -18,6 +18,10 @@ Description: additional Git utilities
   * git-amend-all: adds all untracked files and amend all changes to the last
     commit
   * git-checkout-branches: checks out all remote branches
+  * git-cherry-pick-recursive: does a cherry\-pick for a commit and each all its
+    children
   * git-commit-lazy: creates a new commit with all untracked files and changes
   * git-debian-add: creates a new commit and tag with all untracked files and
     changes as new debian version
+  * git-debian-changelog: creates a new section in debian/changelog with all
+    entries since the last release
