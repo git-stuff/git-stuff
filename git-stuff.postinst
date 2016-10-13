@@ -1,0 +1,98 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+CONFFILE="/etc/default/git-repack-repositories"
+CRONFILE="/etc/cron.d/git-repack-repositories"
+
+case "${1}" in
+	configure)
+		db_get git-repack-repositories/enable
+		GIT_REPACK_REPOSITORIES_ENABLE="${RET}" # boolean
+
+		db_get git-repack-repositories/directories
+		GIT_REPACK_REPOSITORIES_DIRECTORIES="${RET}" # string (w/ empty)
+
+		db_get git-repack-repositories/cron
+		GIT_REPACK_REPOSITORIES_CRON="${RET:-@monthly}" # string (w/o empty)
+
+		db_stop
+
+
+		## Defaults file handling
+
+		if [ ! -e "${CONFFILE}" ]
+		then
+
+cat > "${CONFFILE}" << EOF
+# /etc/default/git-repack-repositories
+
+GIT_REPACK_REPOSITORIES_ENABLE="${GIT_REPACK_REPOSITORIES_ENABLE}"
+GIT_REPACK_REPOSITORIES_DIRECTORIES="${GIT_REPACK_REPOSITORIES_DIRECTORIES}"
+EOF
+
+		fi
+
+		cp -a -f "${CONFFILE}" "${CONFFILE}.tmp"
+
+		# If the admin deleted or commented some variables but then set
+		# them via debconf, (re-)add them to the config file.
+
+		test -z "${GIT_REPACK_REPOSITORIES_ENABLE}" || \
+		grep -Eq '^ *GIT_REPACK_REPOSITORIES_ENABLE=' "${CONFFILE}" || \
+		echo "GIT_REPACK_REPOSITORIES_ENABLE=" >> "${CONFFILE}"
+
+		test -z "${GIT_REPACK_REPOSITORIES_DIRECTORIES}" || \
+		grep -Eq '^ *GIT_REPACK_REPOSITORIES_DIRECTORIES=' "${CONFFILE}" || \
+		echo "GIT_REPACK_REPOSITORIES_DIRECTORIES=" >> "${CONFFILE}"
+
+		sed -e "s|^ *GIT_REPACK_REPOSITORIES_ENABLE=.*|GIT_REPACK_REPOSITORIES_ENABLE=\"${GIT_REPACK_REPOSITORIES_ENABLE}\"|" \
+		    -e "s|^ *GIT_REPACK_REPOSITORIES_DIRECTORIES=.*|GIT_REPACK_REPOSITORIES_DIRECTORIES=\"${GIT_REPACK_REPOSITORIES_DIRECTORIES}\"|" \
+		< "${CONFFILE}" > "${CONFFILE}.tmp"
+
+		mv -f "${CONFFILE}.tmp" "${CONFFILE}"
+
+
+		## Cron file handling
+
+		if [ ! -e "${CRONFILE}" ]
+		then
+
+cat > "${CRONFILE}" << EOF
+# /etc/cron.d/git-repack-repositories
+
+# By default this is run @monthly, see crontab(5) for more information.
+${GIT_REPACK_REPOSITORIES_CRON} root if [ -x /usr/bin/git-repack-repositories ]; then /usr/bin/git-repack-repositories --quiet; fi
+EOF
+
+		fi
+
+		cp -a -f "${CRONFILE}" "${CRONFILE}.tmp"
+
+		# If the admin deleted or commented some variables but then set
+		# them via debconf, (re-)add them to the config file.
+
+		grep -Eq "^${GIT_REPACK_REPOSITORIES_CRON} root" "${CRONFILE}" || \
+		echo "${GIT_REPACK_REPOSITORIES_CRON} root if [ -x /usr/bin/git-repack-repositories ]; then /usr/bin/git-repack-repositories --quiet; fi" >> "${CRONFILE}"
+
+		sed -e "s|^ *root|${GIT_REPACK_REPOSITORIES_CRON} root|" \
+		< "${CRONFILE}" > "${CRONFILE}.tmp"
+
+		mv -f "${CRONFILE}.tmp" "${CRONFILE}"
+		;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+
+		;;
+
+	*)
+		echo "postinst called with unknown argument \`${1}'" >&2
+		exit 1
+		;;
+esac
+
+#DEBHELPER#
+
+exit 0

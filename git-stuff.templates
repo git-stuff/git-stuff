@@ -1,0 +1,31 @@
+Template: git-repack-repositories/title
+Type: title
+Description: Git Repack Repositories
+
+Template: git-repack-repositories/enable
+Type: boolean
+Default: false
+Description: Git repack:
+ Git repositories tend to grow quite large quickly. From time to time, you
+ have to repack the repositories to save space and keep optimal
+ performances (by not having too many of files in the objects
+ subdirectory).
+ .
+ Do you want to enable the cron job?
+
+Template: git-repack-repositories/directories
+Type: string
+Default: /srv/git
+Description: Git directories:
+ Please specify the directory or directories (space separated) that is used
+ as root for the Git repositories on your server. Note that
+ git-repack-repositories will work recursively.
+
+Template: git-repack-repositories/cron
+Type: string
+Default: @monthly
+Description: Git cron:
+ What times should the cron job be started? Please refer to crontab(5) for
+ the format definition. The default or if left empty will set the interval
+ to '@monthly' (without the quotes) which means it gets executed every
+ beginning of the month at midnight.
