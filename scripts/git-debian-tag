@@ -9,9 +9,11 @@
 
 set -e
 
+_MODE="$(basename ${0} | awk -F- '{ print $2 }')"
+
 _VERSION="${1}"
 _HASH="${2}"
 
-_TAG="$(echo ${_VERSION} | sed -e 's|^debian/||' -e 's|~|_|g')"
+_TAG="$(echo ${_VERSION} | sed -e "s|^${_MODE}/||" -e 's|~|_|g')"
 
-git tag -a -f -m "Tagging debian version ${_VERSION}." debian/${_TAG} ${_HASH}
+git tag -a -f -m "Tagging ${_MODE} version ${_VERSION}." ${_MODE}/${_TAG} ${_HASH}

@@ -21,7 +21,15 @@ TAG="$(echo ${VERSION} | sed -e 's|~|_|g')"
 
 if [ ! -d .git ]
 then
+	# Removing toplevel git metadata
 	rm -rf .git*
+
+	# Checking for other git metadata
+	if [ -n "$(find . -name ".git*")" ]
+	then
+		echo "W: directory contains git meta data"
+	fi
+
 	git init --shared
 fi
 

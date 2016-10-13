@@ -14,10 +14,10 @@ Tag ()
 	_TAG="${1}"
 	HASH="$(git log | grep -B4 ${_TAG} | awk '/^commit/ { print $2 }')"
 
-	git-debian-tag ${_TAG} ${HASH}
+	git-${_MODE}-tag ${_TAG} ${HASH}
 }
 
-for TAG in $(git tag | grep ^debian)
+for TAG in $(git tag | grep ^${_MODE})
 do
 	Tag $(echo ${TAG} | awk -F/ '{ print $2 }')
 done
