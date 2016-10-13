@@ -14,7 +14,7 @@ test:
 
 	@for SCRIPT in $(SCRIPTS); \
 	do \
-		if [ -e $${SCRIPT} ]; \
+		if [ -f $${SCRIPT} ]; \
 		then \
 			sh -n $${SCRIPT}; \
 			echo -n "."; \
@@ -28,7 +28,7 @@ test:
 		echo -n "Checking for bashisms"; \
 		for SCRIPT in $(SCRIPTS); \
 		do \
-			if [ -e $${SCRIPT} ]; \
+			if [ -f $${SCRIPT} ]; \
 			then \
 				checkbashisms -f -x $${SCRIPT}; \
 				echo -n "."; \
@@ -51,9 +51,12 @@ install:
 	mkdir -p $(DESTDIR)/usr/bin
 	cp -r scripts/* $(DESTDIR)/usr/bin
 
+	mkdir -p $(DESTDIR)/usr/share/git-stuff
+	mv $(DESTDIR)/usr/bin/git-stuff.sh $(DESTDIR)/usr/share/git-stuff
+
 	# Installing docs
 	mkdir -p $(DESTDIR)/usr/share/doc/git-stuff
-	cp -r COPYING docs $(DESTDIR)/usr/share/doc/git-stuff
+	cp -r COPYING docs/* $(DESTDIR)/usr/share/doc/git-stuff
 
 	# Installing manpages
 	for MANPAGE in manpages/en/*; \
@@ -78,7 +81,7 @@ uninstall:
 		rm -f $(DESTDIR)/usr/bin/$$(basename $${_SCRIPT}); \
 	done
 
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/bin || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/bin > /dev/null 2>&1 || true
 
 	# Uninstalling docs
 	rm -rf $(DESTDIR)/usr/share/doc/git-stuff
@@ -102,16 +105,16 @@ uninstall:
 
 	for SECTION in $(ls manpages/en/* | awk -F. '{ print $2 }'); \
 	do \
-		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/man$${SECTION} || true; \
-		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/*/man$${SECTION} || true; \
+		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/man$${SECTION} > /dev/null 2>&1 || true; \
+		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/*/man$${SECTION} > /dev/null 2>&1 || true; \
 	done
 
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man > /dev/null 2>&1 || true
 
 	# Removing remaining directories
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR) || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR) > /dev/null 2>&1 || true
 
 clean:
 	@echo "Nothing to clean."

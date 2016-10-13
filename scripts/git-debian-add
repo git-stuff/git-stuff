@@ -9,6 +9,8 @@
 
 set -e
 
+_MODE="$(basename ${0} | awk -F- '{ print $2 }')"
+
 if [ -n "${1}" ]
 then
 	_VERSION="${1}"
@@ -34,5 +36,5 @@ git add .
 
 chmod 0755 debian/rules
 
-git commit -a -m "Adding debian version ${_VERSION}."
-git-debian-tag ${_TAG} ${_HASH}
+git commit -a -m "Adding ${_MODE} version ${_VERSION}."
+git-${_MODE}-tag ${_TAG} ${_HASH}

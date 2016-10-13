@@ -9,10 +9,12 @@
 
 set -e
 
+_MODE="$(basename ${0} | awk -F- '{ print $2 }')"
+
 # Checking arguments
 case "${1}" in
 	-h|--help)
-		echo "git-debian-changelog - wrapper over git-dch(1)"
+		echo "git-${_MODE}-changelog - wrapper over git-dch(1)"
 		echo
 		echo "Usage: ${0} [COMMIT]"
 
@@ -54,14 +56,14 @@ then
 		COMMIT="$(git log | grep -B4 -m1 "Releasing version " | awk '/^commit / { print $2 }')"
 	fi
 
-	if [ -z "${COMMIT}" ] && [ -n "$(git log | grep -m1 'Adding debian version ')" ]
+	if [ -z "${COMMIT}" ] && [ -n "$(git log | grep -m1 "Adding ${_MODE} version ")" ]
 	then
-		COMMIT="$(git log | grep -B4 -m1 "Adding debian version " | awk '/^commit / { print $2 }')"
+		COMMIT="$(git log | grep -B4 -m1 "Adding ${_MODE} version " | awk '/^commit / { print $2 }')"
 	fi
 
-	if [ -z "${COMMIT}" ] && [ -n "$(git log | grep -m1 'Releasing debian version ')" ]
+	if [ -z "${COMMIT}" ] && [ -n "$(git log | grep -m1 "Releasing ${_MODE} version ")" ]
 	then
-		COMMIT="$(git log | grep -B4 -m1 "Releasing debian version " | awk '/^commit / { print $2 }')"
+		COMMIT="$(git log | grep -B4 -m1 "Releasing ${_MODE} version " | awk '/^commit / { print $2 }')"
 	fi
 else
 	shift

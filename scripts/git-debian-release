@@ -9,6 +9,8 @@
 
 set -e
 
+_MODE="$(basename ${0} | awk -F- '{ print $2 }')"
+
 if [ ! -e debian/changelog ]
 then
 	echo "E: no debian/changelog found."
@@ -28,5 +30,5 @@ _HASH="${2}"
 
 git add .
 
-git commit -a -m "Releasing debian version ${_VERSION}."
-git-debian-tag ${_TAG} ${_HASH}
+git commit -a -m "Releasing ${_MODE} version ${_VERSION}."
+git-${_MODE}-tag ${_TAG} ${_HASH}

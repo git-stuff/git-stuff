@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: git-stuff 4\n"
-"POT-Creation-Date: 2011-08-23 09:26+0300\n"
+"POT-Creation-Date: 2011-08-23 09:20+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel.baumann@progress-technologies.net>\n"
 "Language-Team: none\n"
@@ -45,11 +45,47 @@ msgstr "Git Stuff"
 msgid "NAME"
 msgstr "NAME"
 
+#. type: Plain text
+#: en/git-checkout-branches.1:13
+msgid "B<git-checkout-branches> - checkout all remote branches"
+msgstr "B<git-checkout-branches> - checkt alle Remote Branches aus"
+
+#. type: SH
+#: en/git-checkout-branches.1:14
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "SYNTAX"
+
+#. type: Plain text
+#: en/git-checkout-branches.1:16
+msgid "B<git-checkout-branches>"
+msgstr "B<git-checkout-branches>"
+
 #. type: SH
 #: en/git-checkout-branches.1:17 en/git-stuff.7:14
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "BESCHREIBUNG"
+
+#. type: Plain text
+#: en/git-checkout-branches.1:19
+msgid ""
+"B<git-checkout-branches> is a program that automatically checks out all "
+"remote branches of a Git repository."
+msgstr ""
+"B<git-checkout-branches> ist ein Script das automatisch alle Remote Branches "
+"eines Git Repositories auscheckt."
+
+#. type: SH
+#: en/git-checkout-branches.1:20
+#, no-wrap
+msgid "OPTIONS"
+msgstr "OPTIONEN"
+
+#. type: Plain text
+#: en/git-checkout-branches.1:22
+msgid "git-checkout-branches has no options."
+msgstr "git-checkout-branches hat keine Optionen."
 
 #. type: SH
 #: en/git-checkout-branches.1:23 en/git-stuff.7:23
@@ -61,6 +97,16 @@ msgstr "SIEHE AUCH"
 #: en/git-checkout-branches.1:25 en/git-stuff.7:25
 msgid "I<git>(1)"
 msgstr "I<git>(1)"
+
+#. type: Plain text
+#: en/git-checkout-branches.1:27
+msgid "I<git-stuff>(7)"
+msgstr "I<git-stuff>(7)"
+
+#. type: Plain text
+#: en/git-checkout-branches.1:29
+msgid "This program is a part of git-stuff."
+msgstr "Dieses Programm ist Teil von git-stuff."
 
 #. type: SH
 #: en/git-checkout-branches.1:30 en/git-stuff.7:26
@@ -93,39 +139,3 @@ msgid ""
 msgstr ""
 "git-stuff wurde von Daniel Baumann E<lt>I<daniel.baumann@progress-"
 "technologies.net>E<gt> geschrieben."
-
-#. type: Plain text
-#: en/git-stuff.7:13
-msgid "B<git-stuff> - additional Git utilities"
-msgstr "B<git-stuff> - zusätzliche Git Hilfsprogramme"
-
-#. type: Plain text
-#: en/git-stuff.7:16
-msgid ""
-"B<git-stuff> is a growing collection of tools for the Git Version Control "
-"System."
-msgstr ""
-"B<git-stuff> ist eine wachsende Sammlung von Werkzeugen für das Git "
-"Versionsverwaltungssystem."
-
-#. type: SH
-#: en/git-stuff.7:17
-#, no-wrap
-msgid "PROGRAMS"
-msgstr "PROGRAMME"
-
-#. type: Plain text
-#: en/git-stuff.7:19
-msgid "B<git-stuff> currently features the following programs."
-msgstr "B<git-stuff> enthält derzeit folgende Programme."
-
-#. type: IP
-#: en/git-stuff.7:20
-#, no-wrap
-msgid "I<git-checkout-branches>(1)"
-msgstr "I<git-checkout-branches>(1)"
-
-#. type: Plain text
-#: en/git-stuff.7:22
-msgid "checks out all remote branches."
-msgstr "checkt alle Remote Branches aus."
