@@ -1,3 +1,11 @@
+git-stuff (7-1) unstable; urgency=low
+
+  * Creating cron job directory in postinst (Closes: #640598).
+  * Updating bash shortcuts example file for git cherry-pick.
+  * Documenting git-commit-lazy.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 06 Sep 2011 13:05:44 +0200
+
 git-stuff (6-1) unstable; urgency=low
 
   * Adding git-amend-all script.

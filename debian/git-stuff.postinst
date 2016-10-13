@@ -62,6 +62,7 @@ EOF
 
 		if [ ! -e "${CRONFILE}" ]
 		then
+			mkdir -p /etc/cron.d
 
 cat > "${CRONFILE}" << EOF
 # /etc/cron.d/git-repack-repositories

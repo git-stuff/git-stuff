@@ -125,23 +125,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/git-checkout-branches.1:13
-msgid "B<git-checkout-branches> - checkout all remote branches"
-msgstr ""
-
-#. type: Plain text
-#: en/git-checkout-branches.1:16
-msgid "B<git-checkout-branches>"
-msgstr ""
-
-#. type: Plain text
-#: en/git-checkout-branches.1:19
+#: en/git-commit-lazy.1:13
 msgid ""
-"B<git-checkout-branches> is a program that checks out all remote branches of "
-"a Git repository."
+"B<git-commit-lazy> - creates a new commit with all untracked files and "
+"changes."
 msgstr ""
 
 #. type: Plain text
-#: en/git-checkout-branches.1:22
-msgid "git-checkout-branches has no options."
+#: en/git-commit-lazy.1:16
+msgid "B<git-commit-lazy>"
+msgstr ""
+
+#. type: Plain text
+#: en/git-commit-lazy.1:19
+msgid ""
+"B<git-commit-lazy> is a program that creates a new commit (even if empty) "
+"with all untracked files and changes using the commit message 'Updating.'."
+msgstr ""
+
+#. type: Plain text
+#: en/git-commit-lazy.1:22
+msgid "git-commit-lazy has no options."
 msgstr ""

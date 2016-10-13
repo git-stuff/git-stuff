@@ -18,3 +18,4 @@ Description: additional Git utilities
   * git-amend-all: adds all untracked files and amend all changes to the last
     commit
   * git-checkout-branches: checks out all remote branches
+  * git-commit-lazy: creates a new commit with all untracked files and changes.
