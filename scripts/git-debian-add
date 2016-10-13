@@ -32,5 +32,7 @@ fi
 
 git add .
 
+chmod 0755 debian/rules
+
 git commit -a -m "Adding debian version ${_VERSION}."
 git-debian-tag ${_TAG} ${_HASH}

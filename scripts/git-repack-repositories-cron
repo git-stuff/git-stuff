@@ -1,0 +1,40 @@
+#!/bin/sh
+
+## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+if [ -e /etc/default/git-repack-repositories ]
+then
+	. /etc/default/git-repack-repositories
+fi
+
+if [ "${GIT_REPACK_REPOSITORIES_ENABLE}" != "true" ]
+then
+	echo "P: git-repack-repositories is disabled in /etc/default/git-repack-repositories."
+	exit 0
+fi
+
+if [ -z "${GIT_REPACK_REPOSITORIES_DIRECTORIES}" ]
+then
+	echo "E: git-repack-repositories has no directories in /etc/default/git-repack-repositories."
+	exit 1
+fi
+
+for _DIRECTORY in ${GIT_REPACK_REPOSITORIES_DIRECTORIES}
+do
+	if [ ! -e "${_DIRECTORY}" ]
+	then
+		echo "W: ${_DIRECTORY} - no such file or directory, skipping."
+		continue
+	fi
+
+	cd "${_DIRECTORY}"
+	git-repack-repositories --quiet
+	cd "${OLDPWD}"
+done

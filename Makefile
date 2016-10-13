@@ -4,7 +4,8 @@ SHELL := sh -e
 
 LANGUAGES = $(shell cd manpages/po && ls)
 
-SCRIPTS = scripts/*
+SCRIPTS = debian/*.config debian/*.postinst debian/*.postrm \
+	  $(shell ls scripts/* | grep -v .pl | grep -v git-hook-notification-bts) # FIXME
 
 all: build
 
@@ -13,8 +14,11 @@ test:
 
 	@for SCRIPT in $(SCRIPTS); \
 	do \
-		sh -n $${SCRIPT}; \
-		echo -n "."; \
+		if [ -e $${SCRIPT} ]; \
+		then \
+			sh -n $${SCRIPT}; \
+			echo -n "."; \
+		fi; \
 	done
 
 	@echo " done."
@@ -24,8 +28,11 @@ test:
 		echo -n "Checking for bashisms"; \
 		for SCRIPT in $(SCRIPTS); \
 		do \
-			checkbashisms -f -x $${SCRIPT}; \
-			echo -n "."; \
+			if [ -e $${SCRIPT} ]; \
+			then \
+				checkbashisms -f -x $${SCRIPT}; \
+				echo -n "."; \
+			fi; \
 		done; \
 		echo " done."; \
 	else \
