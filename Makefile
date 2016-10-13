@@ -5,7 +5,7 @@ SHELL := sh -e
 LANGUAGES = $(shell cd manpages/po && ls)
 
 SCRIPTS = debian/*.config debian/*.postinst debian/*.postrm \
-	  $(shell ls scripts/* | grep -v .pl | grep -v git-hook-notification-bts) # FIXME
+	  $(shell ls scripts/* | grep -v git-hook-notification-bts) # FIXME
 
 all: build
 

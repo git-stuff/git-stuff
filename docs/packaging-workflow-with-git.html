@@ -39,7 +39,6 @@
 
 <ul>
 	<li><red><b>changeslist:</b></red> name of the commit mailinglist</li>
-	<li><red><b>ciaproject:</b></red> name of the cia project</li>
 	<li><red><b>package:</b></red> name of the source package of your program</li>
 	<li><red><b>project:</b></red> name of the alioth project</li>
 	<li><red><b>revision:</b></red> debian version string</li>
@@ -117,23 +116,6 @@ $ cd <red><i>program</i></red>.git</b></pre></li>
 
 	<li>Add gitweb description
 	<pre><b>$ echo "<red><i>project</i></red>/<red><i>program</i></red>" &gt; description</b></pre></li>
-
-	<li>Add commit notifiers (cia and mailinglist)
-	<pre><b>$ cat &gt;&gt; config &lt;&lt; EOF
-[hooks]
-	cia-project = <red><i>ciaproject</i></red>
-	mailinglist = <red><i>changeslist</i></red>@lists.alioth.debian.org
-EOF
-
-$ mv hooks/post-receive hooks/post-receive.orig
-
-$ cat &gt; hooks/post-receive &lt;&lt; EOF
-#!/bin/sh
-exec /usr/local/bin/git-commit-notice
-EOF
-$ chmod 0755 hooks/post-receive
-
-$ cd ..</b></pre></li>
 
 	<li>Upload git repository to alioth
 	<pre><b>$ scp -r <red><i>program</i></red>.git <red><i>username</i></red>@alioth.debian.org:/git/<red><i>project</i></red></b></pre></li>
