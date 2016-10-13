@@ -1,5 +1,5 @@
 * write manpages
 * include workflow documentation
 * add git commit hooks
-* add git repack cron job
 * add shortcut example for profile
+* expose git repack/git gc options used in git-repack-repositories through debconf

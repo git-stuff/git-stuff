@@ -12,6 +12,6 @@ set -e
 _VERSION="${1}"
 _HASH="${2}"
 
-_TAG="$(echo ${_VERSION} | sed -e 's|~|_|g')"
+_TAG="$(echo ${_VERSION} | sed -e 's|^debian/||' -e 's|~|_|g')"
 
 git tag -a -f -m "Tagging debian version ${_VERSION}." debian/${_TAG} ${_HASH}

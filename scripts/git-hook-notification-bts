@@ -1,0 +1,83 @@
+#! /bin/bash
+#
+# Copyright (c) 2009 Adeodato Simó (dato@net.com.org.es)
+#
+# This software may be used and distributed according to the terms
+# of the MIT License, incorporated herein by reference.
+
+# Purpose: this hook will tag Debian bugs as pending. The mail will
+# include the commit message, and the portion of the diff corresponding
+# to debian/changelog, plus a pointer to the URL that contains the full
+# diff. It has some heuristics not to tag the same bug pending twice.
+#
+# Usage: make this script your post-receive hook, or exec this script
+# from there. If you need to execute more than one script against
+# post-receive's stdin, you can use pee(1), from the moreutils package.
+# No configuration is necessary.
+
+set -e
+set -u
+
+REPODIR=`readlink -f "$PWD"`
+PROJECTROOT=`git repo-config hooks.projectroot`
+REPOREL=${REPODIR#$PROJECTROOT}
+REPOREL=${REPODIR#/srv/git.debian.org/git/}
+REPOREL=${REPOREL#/srv/alioth.debian.org/chroot/home/}
+REPOREL=${REPOREL/\/public_git\//\/}
+BASEURL="`git repo-config hooks.baseurl`"
+BASEURL="${BASEURL:-http://git.debian.org/}"
+BASEURL="${BASEURL}?p=$REPOREL"
+
+tempdir=`mktemp -d`
+trap "rm -rf \"${tempdir}\"" EXIT
+
+send_mail() { # send_mail bugno revno diff_file
+    local bug="$1"
+    local rev="$2"
+    local diff="$3"
+    local from=$(git show -s --pretty='format:%cn <%ce>' $rev |
+                 perl -CI -MEncode -e 'print Encode::encode("MIME-Q", <STDIN>)')
+    (cat <<EOF
+From: $from
+To: $bug-submitter@bugs.debian.org
+Bcc: control@bugs.debian.org
+Subject: Bug#$bug marked as pending
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+X-Mailer: http://snipr.com/post-receive-tag-pending
+
+tag $bug pending
+thanks
+
+Hello,
+
+Bug #$bug reported by you has been fixed in the Git repository. You can
+see the changelog below, and you can check the diff of the fix at:
+
+    ${BASEURL};a=commitdiff;h=`git show -s --pretty='format:%h' "$rev"`
+
+---
+EOF
+    cat "$diff") | /usr/sbin/sendmail -oi -t
+}
+
+while read oldrev newrev refname; do
+    git rev-parse --not --branches | grep -v $(git rev-parse $refname) |
+    git rev-list --reverse --stdin "${oldrev}..${newrev}" |
+    while read rev; do
+        c="$tempdir/$rev.changelog"
+        d="$tempdir/$rev.diff"
+        git show ${rev}:debian/changelog >"$c" 2>/dev/null
+        git show ${rev} -- debian/changelog >"$d"
+        bugs=`dpkg-parsechangelog -l"$c" | sed -rne 's/^Closes: *//pi'`
+        for bug in $bugs; do
+            if  grep -qE '^\+.*\<'$bug'\>' "$d" &&
+              ! grep -qE  '^-.*\<'$bug'\>' "$d"; then
+              send_mail $bug "$rev" "$d"
+            fi
+        done
+    done
+done
+
+# vi: et

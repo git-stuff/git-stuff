@@ -9,30 +9,43 @@
 
 set -e
 
-REPOSITORIES="${@}"
+case "${1}" in
+	--quiet)
+		_QUIET="true"
+		shift
 
-if [ -z "${REPOSITORIES}" ]
+		_GIT_REPACK_OPTIONS="-q"
+		_GIT_GC_OPTIONS="--quiet"
+		;;
+esac
+
+_REPOSITORIES="${@}"
+
+if [ -z "${_REPOSITORIES}" ]
 then
 	if [ ! -e HEAD ]
 	then
-		REPOSITORIES="*.git"
+		_REPOSITORIES="*.git"
 	else
-		REPOSITORIES="$(pwd)"
+		_REPOSITORIES="$(pwd)"
 	fi
 fi
 
-for REPOSITORY in ${REPOSITORIES}
+for _REPOSITORY in ${_REPOSITORIES}
 do
-	echo "--------------------------------------------------------------------------------"
-	echo ${REPOSITORY}
-	echo "--------------------------------------------------------------------------------"
+	[ "${_QUIET}" ] || echo "--------------------------------------------------------------------------------"
+	[ "${_QUIET}" ] || echo ${_REPOSITORY}
+	[ "${_QUIET}" ] || echo "--------------------------------------------------------------------------------"
 
-	cd ${REPOSITORY}
-	git repack -a -d && git gc --aggressive --prune
+	cd ${_REPOSITORY}
+	git repack ${_GIT_REPACK_OPTIONS} -a -d && git gc ${_GIT_GC_OPTIONS} --aggressive --prune
 	cd ..
 
-	if [ "$(id -u)" -eq "0" ] && getent passwd | grep -q gitosis
+	if [ "$(id -u)" -eq "0" ]
 	then
-		chown gitosis:gitosis ${REPOSITORY} -R
+		_UID="$(stat -c %u ${_REPOSITORY})"
+		_GID="$(stat -c %g ${_REPOSITORY})"
+
+		chown ${_UID}:${_GID} ${_REPOSITORY} -R
 	fi
 done
