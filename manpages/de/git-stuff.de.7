@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH GIT\-STUFF 7 08.10.2011 8 "Git Stuff"
+.TH GIT\-STUFF 7 23.11.2011 9 "Git Stuff"
 
 .SH NAME
 \fBgit\-stuff\fP \- zusätzliche Git Hilfsprogramme
@@ -28,12 +28,19 @@ fügt alle Untracked Dateien hinzu und commited diese zusammen mit allen
 anderen Änderungen zum letzten Commit.
 .IP \fIgit\-checkout\-branches\fP(1) 4
 checkt alle Remote Branches aus.
+.IP \fIgit\-cherry\-pick\fP(1) 4
+übernimmt eine Id und alle nachfolgenden Commits mittels cherry\-pick.
 .IP \fIgit\-commit\-lazy\fP(1) 4
 erstellt einen neuen Commit mit allen Untracked Dateien und allen
 Änderungen.
 .IP \fIgit\-debian\-add\fP(1) 4
 \fBgit\-commit\-lazy\fP \- erstellt einen neuen Commit und Tag mit allen Untracked
 Dateien und allen Änderungen als neue Debian Version.
+.IP \fIgit\-debian\-changelog\fP(1) 4
+erstellt eine neue Section in debian/changelog mit allen Einträgen seit dem
+letzten Release.
+.IP \fIgit\-whoami\fP(1) 4
+gibt Informationen zu Autor und Committer an.
 
 .SH "SIEHE AUCH"
 \fIgit\fP(1)

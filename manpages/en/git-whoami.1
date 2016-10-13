@@ -9,16 +9,18 @@
 .TH GIT\-STUFF 1 2011\-11\-23 9 "Git Stuff"
 
 .SH NAME
-\fBgit\-checkout\-branches\fR \- checkout all remote branches
+\fBgit\-whoami\fR \- tell about author and committer information
 
 .SH SYNOPSIS
-\fBgit\-checkout\-branches\fR
+\fBgit\-whoami\fR
 
 .SH DESCRIPTION
-\fBgit\-checkout\-branches\fR is a program that checks out all remote branches of a Git repository.
+\fBgit\-whoami\fR is a program that tells what author and committer information would (probably) be used for a commit.
+.PP
+This is particularly helpful when operating many different Git repositories with different identities (work, private, different projects). \fBgit\-whoami\fR is inspired by 'bzr whoami'.
 
 .SH OPTIONS
-git\-checkout\-branches has no options.
+git\-whoami has no options.
 
 .SH SEE ALSO
 \fIgit\fR(1)
@@ -31,4 +33,5 @@ This program is a part of git\-stuff.
 Bugs can be reported by submitting a bugreport for the git\-stuff package in the Debian Bug Tracking System at <\fIhttp://bugs.debian.org/\fR> or by writing a mail to the author.
 
 .SH AUTHOR
-git\-stuff was written by Daniel Baumann <\fIdaniel.baumann@progress-technologies.net\fR>.
+git\-stuff was written by Daniel Baumann <\fIdaniel.baumann@progress-technologies.net\fR>,
+git\-whoami was written by Peter Eisentraut <\fIpeter@eisentraut.org\fR>.

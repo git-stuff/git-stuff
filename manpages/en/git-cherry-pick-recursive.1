@@ -9,17 +9,19 @@
 .TH GIT\-STUFF 1 2011\-11\-23 9 "Git Stuff"
 
 .SH NAME
-\fBgit\-debian\-add\fR \- creates a new commit and tag with all untracked files and changes as new debian version
+\fBgit\-cherry\-pick\-recursive\fR \- does a cherry\-pick for a commit and each all its children
 
 .SH SYNOPSIS
-\fBgit\-debian\-add\fR [\fIVERSION\fR]
+\fBgit\-cherry\-pick\-recursive\fR \fIBRANCH\fR \fIID\fR
 
 .SH DESCRIPTION
-\fBgit\-debian\-add\fR is a program that creates a new commit and tag with all untracked files and changes as a new debian version using the commit message 'Adding debian version \fIVERSION\fR.' and 'Tagging debian version \fIVERSION\fR.'. If no version is specified, \fIVERSION\fR is automatically replaced with the newest version entry (without epoche) from debian/changelog.
+\fBgit\-cherry\-pick\-recursive\fR is a program that does a cherry\-pick for a specified id and for each of the children commits on a specified branch.
 
 .SH OPTIONS
-.IP "\fIVERSION\fR" 4
-git\-debian\-add uses dpkg-parsechangelog from the dpkg-dev package to automatically determine the debian version to be added. This can be overriden by manually specifying the version as first argument.
+.IP "\fIBRANCH\fR" 4
+specifies which branch the children commits should be deduced from.
+.IP "\fIID\fR" 4
+specifies which id should be started the cherry\-picking from.
 
 .SH SEE ALSO
 \fIgit\fR(1)
