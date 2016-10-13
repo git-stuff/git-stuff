@@ -1,5 +1,6 @@
 * write manpages
 * include workflow documentation
 * add git commit hooks
-* add shortcut example for profile
 * expose git repack/git gc options used in git-repack-repositories through debconf
+* rework commit hooks and use consistent configuration options.
+* update workflow documents and type them in sisu.

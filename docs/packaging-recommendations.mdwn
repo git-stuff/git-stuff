@@ -1,0 +1,69 @@
+# Debian Packaging Recommendation
+
+## <a name="introduction">1 Introduction</a>
+
+This document contains recommendations for good Debian packaging, assembled after several years of maintaining and reviewing packages within the Debian project.
+
+Technically, the Debian Policy defines everything that is required for a Debian package to be valid. But practically, there are a lot of things unwritten and in the maintainers descretion that make up the current state of the art packaging. This is an attempt to document them.
+
+## <a name="source-packages">2 Source Packages</a>
+
+### <a name="upstream-tarballs">2.1 Upstream Tarballs</a>
+
+#### <a name="unmodified-sources">2.1.1 Rule: Unmodified Sources</a>
+
+Every source tarball has to consist of the unmodified upstream source only.
+
+Often, the filename of the upstream source (e.g. <tt>foo-1.2.3.tar.gz</tt>) does not match the name for the source tarball required for Debian (e.g. <tt>foo_1.2.3.orig.tar.gz</tt>). If so, you do only rename the upstream source to its new name without changing anything else (use <tt>md5sum</tt> or <tt>sha1sum</tt> to verify).
+
+#### <a name="package-format">2.1.2 Exception: Package Format</a>
+
+If upstream does not provide a GNU zip'ed tarball, you have two equal possibilites, although the first one is considered the more beautiful one:
+
+ 1. Either you do unpackage the upstream source and repackage them as a GNU zip'ed tarball, without changing anything else, neither the name of the directory when it is unpacked nor any file inside it.
+
+    If you decide to do this, you do not use any additional tag in the upstream version to reflect this repackaging. It may be handy to add the download and repack commands in a special <tt>upstream</tt> target in <tt>debian/rules</tt>.
+
+ 1. Or you put the unmodified upstream source into a new directory and create the source tarball from this very directory.
+
+    You will have to build-depend on the unpack program for the used package format of the upstream source, unless the unpack program is of priority essential. Therefore, this method is not suitable for packages which are intended to be included in main if the unpack program is not already part of main.
+
+<b>Note:</b> Eventhough dpkg source version 3 allows upstream tarballs to be compressed with bzip2, it is prefered to keep using GNU zip. Bzip2 decompression has much higher CPU costs at no significant space savings, whereas disk space and network bandwith are considered to be cheap ressources today. This might change when dpkg gains support for xz compression one day.
+
+#### <a name="debian-directory">2.1.3 Exception: Debian Directory</a>
+
+If upstream does provide a Debian directory inside of the upstream source, it is recommended to remove it. Even when you do not run into conflicting files right now, it is easier and safer to remove it to avoid future troubles. Additionally, the Debian diff gets simpler.
+
+If you do this, you do only remove the Debian directory from the unpacked upstream source and not anything else. To reflect that you have changed the upstream source, you also add the <tt>+debian</tt> tag to the upstream version. If the directory of the unpacked upstream source contains the upstream version string, you also add the <tt>+debian</tt> tag there.
+
+A repacked upstream tarball with a removed Debian directory would therefore be named like <tt>foo_1.2.3+debian.orig.tar.gz</tt>.
+
+Do not forget to mention the repackaging in <tt>debian/changelog</tt> (e.g. <tt>* Repackaged upstream tarball without debian directory.</tt>) and please ask upstream to remove the Debian directory in the next release.
+
+#### <a name="partial-sources">2.1.4 Exception: Partial Sources</a>
+
+There are only four cases where you are allowed to remove components from the upstream sources:
+
+  1. If the upstream source contains version information like for Git the <tt>.git</tt> directories and the <tt>.gitignore</tt> or <tt>.gitattributes</tt> files (or the corresponding files for other version control systems), you remove only these files and do not change anything else.
+
+     Such a repackaged upstream source does not get any additional tag in its upstream version number. It is recommended to introduce an <tt>upstream</tt> target in <tt>debian/rules</tt> to remove those files in an semi automatic fashion for the next releases. Please ask upstream to remove these files in the next release, if your packaging snapshots then you are removing them anyway (see later).<br /><br /></li>
+
+  1. If the package is intended to be accepted for main, you have to remove every non-free component from the tarball.
+
+     Please note any removal in <tt>debian/copyright</tt>. Also, it is nice to have the commands for removing the files in an <tt>dfsg</tt> target in the <tt>debian/rules</tt> file. Note the removal and repacking in the changelog. To reflect the repackaging, add the <tt>+dfsg</tt> tag to the upstream version. If you are expecting to be in need of repackaging your source tarball many times because it is such a complicated package, but there will be likely no new upstream release in between, then you add a number to the <tt>+dfsg</tt> tag, like <tt>+dfsg1</tt> for the first repackaging, <tt>+dfsg2</tt> for the second repackaging etc.
+
+     A repackaged source tarball with removed components due to licensing issues would be named like <tt>foo_1.2.3+dfsg.orig.tar.gz</tt> or <tt>foo_1.2.3+dfsg1.orig.tar.gz</tt>.
+
+  1. If the upstream source contains any undistributable components, which can either be components with no license attached, or components with a license not allowing redistribution, you have to remove these components regardless to which section the package is intended to be accepted in.
+
+     The repackaging follows the same recommendations as above with removing non-free components from a source tarball.
+
+  1. Some upstream sources do include their dependencies in source code.
+
+     In most cases, you are not going to build your packages against those sources, but using the respective packages from debian instead. If you can significantly reduce the size of the upstream tarball by several megabytes when removing those dependencies, or significantly reduce the work to create and maintain <tt>debian/copyright</tt>, then you repack the upstream tarball,
+
+     The repackaging follows the same recommendations as above with removing non-free components from a source tarball.
+
+#### <a name="snapshot-tarballs">2.1.5 Rule: Snapshot Tarballs</a>
+
+## <a name="debian-diff">3 Debian Diff</a>

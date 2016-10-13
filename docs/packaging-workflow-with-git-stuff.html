@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Packaging Workflow with Git-Stuff</title>
+
+	<style type="text/css">
+		a { color: black; }
+		a:hover { text-decoration: none; }
+		a:visited { color: gray; }
+		acronym { cursor: help; }
+		body { font-family: "DejaVu Sans", "Bitstream Vera Sans", sans-serif; }
+		pre { background-color: #EEEEEE; border: 1px dashed black; padding: 1em; }
+		red { color: red; }
+		div.right { text-align: right; }
+	</style>
+<body>
+
+<div>
+
+<hr />
+
+<h1>Packaging Workflow with Git-Stuff</h1>
+
+<hr />
+
+<h2><a name="toc">Table of Contents</a></h2>
+
+<ol>
+	<li><a href="#definitions">Definitions</a></li>
+	<li><a href="#prepartations">Preparations</a></li>
+	<li><a href="#new-package">Handling new packages</a></li>
+	<li><a href="#existing-package">Handling existing package</a></li>
+</ol>
+
+<hr />
+
+<h2><a name="definitions">1. Definitions</a></h2>
+
+<ul>
+	<li><red><b>package:</b></red> name of the source package of your program</li>
+	<li><red><b>revision:</b></red> debian version string</li>
+	<li><red><b>version:</b></red> upstream version string</li>
+</ul>
+
+<div class="right">
+	<a href="#toc">^</a>
+</div>
+
+<h2><a name="preparations">2 Preparations</a></h2>
+
+<ul>
+	<li>Install git
+	<pre><b># apt-get install git</b></pre></li>
+
+	<li>Install git-stuff
+	<pre><b># apt-get install git-stuff</b></pre>
+	</li>
+
+	<li>Install pristine-tar
+	<pre><b># apt-get install pristine-tar</b></pre>
+	</li>
+
+	<li>Install git-buildpackage
+	<pre><b># apt-get install git-buildpackage</b></pre>
+	</li>
+</ul>
+
+<div class="right">
+	<a href="#toc">^</a>
+</div>
+
+<hr />
+
+<h2><a name="new-package">3 Handling new packages</a></h2>
+
+<h3><a name="upstream-tarball">3.1 Preparing upstream tarball</a></h3>
+
+<ul>
+	<li>Download upstream source tarball.</li>
+
+	<li>Rename it to <code><b><red><i>package</i></red>_<red><i>version</i></red>.orig.tar.gz</b></code>.</li>
+</ul>
+
+<h3><a name="git-repository">3.2 Preparing git repository</a></h3>
+
+<ul>
+	<li>Create the repository directory
+	<pre><b>$ mkdir <red><i>program</i></red>
+$ cd <red><i>program</i></red></b></pre></li>
+
+	<li>Unpack upstream sources into the directory.</li>
+	<!-- FIXME: <pre><b>$ tar xfz ../<red><i>program</i></red>_<red><i>version</i></red>.orig.tar.gz</b></pre></li> -->
+
+	<li>Import upstream into git
+	<pre><b>$ git-upstream-add <code><red><i>version</i></red></code></b></pre></li>
+
+	<li>Import pristine-tar delta
+	<pre><b>$ git-upstream-tar ../<red><i>program</i></red>_<red><i>version</i></red>.orig.tar.gz</b></pre></li>
+
+	<li>Create and switch to debian branch
+	<pre><b>$ git checkout -b debian</b></pre></li>
+
+	<li>Prepare bare git repository
+	<pre><b>$ cd ..
+$ git clone --bare <red><i>program</i></red> <red><i>program</i></red>.git</pre></li>
+
+	<li>Upload git repository to server
+	<pre><b>$ scp -r <red><i>program</i></red>.git <red><i>username</i></red>@<red><i>server</i></red>:~/</b></pre>
+	</li>
+</ul>
+
+<div class="right">
+	<a href="#toc">^</a>
+</div>
+
+<hr />
+
+<h2><a name="existing-package">4. Handling existing package</a></h2>
+
+<h3><a name="checkout">4.1 Checking out</a></h3>
+
+<ul>
+	<li>Checkout repository
+	<pre><b>$ git clone git@<red><i>server</i></red>:<red><i>path</i></red>/<red><i>package</i></red>.git</b></pre></li>
+
+	<li>Checkout branches
+	<pre><b>$ cd <red><i>package</i></red>
+
+$ git-checkout-branches</b></pre></li>
+</ul>
+
+<h3><a name="checkin">4.2 Checking in</a></h3>
+
+<ul>
+	<li>Make sure that you are on the debian branch
+	<pre><b>$ cd <red><i>package</i></red>
+
+$ git checkout debian</b></pre></li>
+
+	<li>Do your modifications on the package here. Remeber to <b><u>not</u></b> touch debian/changelog at all, it will be later automatically generated from the git log.</li>
+
+	<li>Commit changes
+	<pre><b>$ git commit -a -m "<red><i>My commit message.</i></red>"</b></pre></li>
+
+	<li>After a bunch of commits, you push changes
+	<pre><b>$ git push</b></pre></li>
+</ul>
+
+<h3><a name="upstream">4.3 Adding new Upstream version</a></h3>
+
+<ul>
+	<li>Make sure that you are on the upstream branch
+	<pre><b>$ cd <red><i>package</i></red>
+
+$ git checkout upstream</b></pre></li>
+
+	<li>Removing current files
+	<pre><b>$ rm -rf *</b></pre></li>
+
+	<li>Unpacking new upstream sources into the git repository</li>
+	<!-- FIXME: <pre><b>$ tar xfz ../<red><i>program</i></red>_<red><i>version</i></red>.orig.tar.gz</b></pre></li> -->
+
+	<li>Adding files
+	<pre><b>$ git-upstream-add <red><i>version</i></red></b></pre></li>
+
+	<li>Upstream tarball
+	<pre><b>$ git-upstream-tar <red>version</red>." ../<red><i>package</i></red>_<red><i>version</i></red>.orig.tar.gz</b></pre></li>
+
+	<li>Make sure that you are on the debian branch
+	<pre><b>$ git checkout debian</b></pre></li>
+
+	<li>Merging
+	<pre><b>$ git cherry-pick -n upstream
+$ git commit -a -m "Merging upstream version <red><i>version</i></red></b></pre></li>
+
+	<li>Pushing
+	<pre><b>$ git-push</b></pre></li>
+</ul>
+
+<h3><a name="release">4.4 Releasing new Debian version</a></h3>
+
+<ul>
+	<li>Creating changelog
+	<pre><b>$ git-debian-changelog</b></pre></li>
+
+	<li>Releasing
+	<pre><b>$ git-debian-release</b></pre></li>
+
+	<li>Pushing
+	<pre><b>$ git-push</b></pre></li>
+
+	<li>Upstream tarball
+	<pre><b>$ pristine-tar checkout <red><i>package</i></red>_<red><i>version</i></red>.orig.tar.gz</b></pre></li>
+
+	<li>Build in chroot and upload to ftp-master as usual.</li>
+</ul>
+
+<div class="right">
+	<a href="#toc">^</a>
+</div>
+
+<hr />
+
+</div>
+
+</body>
+
+</html>
