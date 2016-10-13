@@ -9,6 +9,6 @@ Standards-Version: 3.9.2
 Package: git-stuff
 Architecture: all
 Depends: ${misc:Depends}, git
-Recommends: git-buildpackage, pristine-tar
+Recommends: cron, git-buildpackage, mr, pristine-tar
 Description: additional Git utilities
  This is a growing collection of tools for the Git Version Control System.
