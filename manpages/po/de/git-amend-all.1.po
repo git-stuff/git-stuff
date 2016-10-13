@@ -1,13 +1,14 @@
-# German translations for git-stuff package
-# 2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
-# This file is distributed under the same license as the git-stuff package.
+# German translations for live-config package
+# Copyright (C) 2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the live-config package.
+# Automatically generated, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: git-stuff 4\n"
-"POT-Creation-Date: 2011-09-05 13:31+0300\n"
-"PO-Revision-Date: 2010-05-24 09:59+0300\n"
-"Last-Translator: Daniel Baumann <daniel.baumann@progress-technologies.net>\n"
+"Project-Id-Version: live-config VERSION\n"
+"POT-Creation-Date: 2011-09-05 13:10+0300\n"
+"PO-Revision-Date: 2011-09-05 13:10+0300\n"
+"Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -45,11 +46,21 @@ msgstr "Git Stuff"
 msgid "NAME"
 msgstr "NAME"
 
+#. type: Plain text
+#: en/git-amend-all.1:13
+msgid "B<git-amend-all> - add and amend everything to last commit"
+msgstr "B<git-amend-all> - fügt und hängt alles zum letzten Commit hinzu"
+
 #. type: SH
 #: en/git-amend-all.1:14 en/git-checkout-branches.1:14
 #, no-wrap
 msgid "SYNOPSIS"
 msgstr "SYNTAX"
+
+#. type: Plain text
+#: en/git-amend-all.1:16
+msgid "B<git-amend-all>"
+msgstr "B<git-amend-all>"
 
 #. type: SH
 #: en/git-amend-all.1:17 en/git-checkout-branches.1:17 en/git-stuff.7:14
@@ -57,11 +68,25 @@ msgstr "SYNTAX"
 msgid "DESCRIPTION"
 msgstr "BESCHREIBUNG"
 
+#. type: Plain text
+#: en/git-amend-all.1:19
+msgid ""
+"B<git-amend-all> is a program that adds all untracked files and amends all "
+"changes to the last commit."
+msgstr ""
+"B<git-amend-all> ist ein Programm das alle Untracked Dateien hinzufügt und "
+"commited diese zusammen mit allen anderen Änderungen zum letzten Commit."
+
 #. type: SH
 #: en/git-amend-all.1:20 en/git-checkout-branches.1:20
 #, no-wrap
 msgid "OPTIONS"
 msgstr "OPTIONEN"
+
+#. type: Plain text
+#: en/git-amend-all.1:22
+msgid "git-amend-all has no options."
+msgstr "git-amend-all hat keine Optionen."
 
 #. type: SH
 #: en/git-amend-all.1:23 en/git-checkout-branches.1:23 en/git-stuff.7:25
@@ -115,27 +140,3 @@ msgid ""
 msgstr ""
 "git-stuff wurde von Daniel Baumann E<lt>I<daniel.baumann@progress-"
 "technologies.net>E<gt> geschrieben."
-
-#. type: Plain text
-#: en/git-checkout-branches.1:13
-msgid "B<git-checkout-branches> - checkout all remote branches"
-msgstr "B<git-checkout-branches> - checkt alle Remote Branches aus"
-
-#. type: Plain text
-#: en/git-checkout-branches.1:16
-msgid "B<git-checkout-branches>"
-msgstr "B<git-checkout-branches>"
-
-#. type: Plain text
-#: en/git-checkout-branches.1:19
-msgid ""
-"B<git-checkout-branches> is a program that checks out all remote branches of "
-"a Git repository."
-msgstr ""
-"B<git-checkout-branches> ist ein Programm das alle Remote Branches eines Git "
-"Repositories auscheckt."
-
-#. type: Plain text
-#: en/git-checkout-branches.1:22
-msgid "git-checkout-branches has no options."
-msgstr "git-checkout-branches hat keine Optionen."

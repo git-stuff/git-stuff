@@ -52,7 +52,7 @@ install:
 	cp -r scripts/* $(DESTDIR)/usr/bin
 
 	mkdir -p $(DESTDIR)/usr/share/git-stuff
-	mv $(DESTDIR)/usr/bin/git-stuff.sh $(DESTDIR)/usr/share/git-stuff
+	mv $(DESTDIR)/usr/bin/git-stuff.sh $(DESTDIR)/usr/bin/git-stuff_profile.sh $(DESTDIR)/usr/share/git-stuff
 
 	# Installing docs
 	mkdir -p $(DESTDIR)/usr/share/doc/git-stuff
