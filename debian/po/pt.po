@@ -1,0 +1,115 @@
+# Portuguese debconf translations for git-stuff
+# Copyright (C) 2012 Rui Branco <ruipb@debianpt.org>
+# This file is distributed under the same license as the git-stuff package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: git-stuff 11-2\n"
+"Report-Msgid-Bugs-To: git-stuff@packages.debian.org\n"
+"POT-Creation-Date: 2012-09-28 16:27+0200\n"
+"PO-Revision-Date: 2012-09-10 10:06+0100\n"
+"Last-Translator: Rui Branco <ruipb@debianpt.org>\n"
+"Language-Team: pt <traduz@debianpt.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:1001
+msgid "Git repack repositories"
+msgstr "Re-empacotar os repositórios GIT"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid "Enable cron job?"
+msgstr "Activar a tarefa no cron?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid ""
+"Git repositories tend to grow quite large quickly. To save space and "
+"maintain optimal performance they should be repacked from time to time "
+"(reducing the number of files in the objects subdirectory)."
+msgstr ""
+"Os repositórios Git tendem a crescer rapidamente. De modo a poupar espaço e "
+"manter uma performance óptima, deverão ser re-empacotados de vez em quando "
+"(reduzindo o número de ficheiros nos directórios de objectos)."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:3001
+msgid "/srv/git"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid "Git directories:"
+msgstr "Directórios Git:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid ""
+"Please specify the directory or directories (space separated) used as root "
+"for the Git repositories on the server. Note that git-repack-repositories "
+"will work recursively."
+msgstr ""
+"Por favor especifique o directório ou directórios (separados por espaços) "
+"utilizado pelo root para os repositórios Git no servidor. Note que o git-"
+"repack-repositories funcionará recursivamente."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:4001
+msgid "@monthly"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Git cron job scheduling:"
+msgstr "Agendamento da tarefa Git no cron:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Please choose when the cron job should be started."
+msgstr "Por favor escolha quando deverá a tarefa cron ser iniciada."
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid ""
+"See crontab(5) for the format definition. If it is left empty, the default "
+"value \"@monthly\" (without the quotes) will be used, executing the cron job "
+"every month."
+msgstr ""
+"Veja crontab(5) para a definição de formato. Se deixada em branco, será "
+"usado o valor por omissão \"@monthly\" (sem as aspas), executando a tarefa "
+"do cron a cada mês."
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:5001
+msgid "Additional Git utilities"
+msgstr "Utilitários Git adicionais"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid "Should shortcut definitions be activated?"
+msgstr "Deverão as definições de atalhos ser activadas?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid ""
+"Special shortcut definitions for Bash can be activated in /etc/profile.d."
+msgstr ""
+"Definições de atalhos especiais para Bash podem ser activadas em /etc/"
+"profile.d."

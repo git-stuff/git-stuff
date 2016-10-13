@@ -1,0 +1,112 @@
+# Japanese debconf translations for git-stuff
+# Copyright (C) 2012 victory <victory.deb@gmail.com>
+# This file is distributed under the same license as the git-stuff package.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: git-stuff\n"
+"Report-Msgid-Bugs-To: git-stuff@packages.debian.org\n"
+"POT-Creation-Date: 2012-09-28 16:27+0200\n"
+"PO-Revision-Date: 2012-09-08 23:04+0900\n"
+"Last-Translator: victory <victory.deb@gmail.com>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:1001
+msgid "Git repack repositories"
+msgstr "Git repack リポジトリ"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid "Enable cron job?"
+msgstr "cron ジョブを有効にしますか?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid ""
+"Git repositories tend to grow quite large quickly. To save space and "
+"maintain optimal performance they should be repacked from time to time "
+"(reducing the number of files in the objects subdirectory)."
+msgstr ""
+"Git リポジトリは急速に巨大化する傾向があります。容量節約と最適な性能を維持す"
+"るためには、時々まとめ作業を行う (objects サブディレクトリ中のファイル数を減"
+"らす) 必要があります。."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:3001
+msgid "/srv/git"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid "Git directories:"
+msgstr "Git ディレクトリ:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid ""
+"Please specify the directory or directories (space separated) used as root "
+"for the Git repositories on the server. Note that git-repack-repositories "
+"will work recursively."
+msgstr ""
+"サーバ上の Git リポジトリが root として使用するディレクトリを (複数ある場合は"
+"空白区切りで) 指定してください。git-repack-repositories は再帰的に動作するこ"
+"とに注意してください。"
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:4001
+msgid "@monthly"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Git cron job scheduling:"
+msgstr "Git cron ジョブの予定:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Please choose when the cron job should be started."
+msgstr "cron ジョブを開始する日時を指定してください。"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid ""
+"See crontab(5) for the format definition. If it is left empty, the default "
+"value \"@monthly\" (without the quotes) will be used, executing the cron job "
+"every month."
+msgstr ""
+"書式の定義については crontab(5) を参照してください。空のままにすると既定値の "
+"\"@monthly\" (引用符は付きません) が使用され、cron ジョブは毎月実行されます。"
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:5001
+msgid "Additional Git utilities"
+msgstr "追加の Git ユーティリティ"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid "Should shortcut definitions be activated?"
+msgstr "ショートカットの定義を有効にしますか?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid ""
+"Special shortcut definitions for Bash can be activated in /etc/profile.d."
+msgstr "Bash 用の特別なショートカット定義は /etc/profile.d で有効にできます。"

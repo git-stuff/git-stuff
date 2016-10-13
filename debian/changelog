@@ -1,3 +1,29 @@
+git-stuff (12-1) unstable; urgency=low
+
+  * Updating git-upstream-tarball for multiple upstream tarballs.
+  * Adding reviewed templates from the debian-l10n-english team (Closes:
+    #686047).
+  * Removing notifications for discontinued cia.vc service.
+  * Adding Danish debconf translations from Joe Hansen
+    <joedalton2@yahoo.dk> (Closes: #687068).
+  * Adding Slovak debconf translations from Slavko <slavko@slavino.sk>
+    (Closes: #687097).
+  * Adding Portuguese debconf translations from Rui Branco
+    <ruipb@debianpt.org> (Closes: #687143).
+  * Adding Russian debconf translations from Yuri Kozlov
+    <yuray@komyakino.ru> (Closes: #687191).
+  * Adding Polish debconf translations from Michał Kułach
+    <michal.kulach@gmail.com> (Closes: #687548).
+  * Adding modified German debconf translations from Holger Wansing
+    <linux@wansing-online.de> (Closes: #687661).
+  * Adding Japanese debconf translations from victory
+    <victory.deb@gmail.com> (Closes: #688144).
+  * Adding Swedish debconf translations from Martin Bagge
+    <brother@bsnet.se> (Closes: #688417).
+  * Avoid superfluous asking twice of debconf questions.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Fri, 28 Sep 2012 16:57:27 +0200
+
 git-stuff (11-1) unstable; urgency=low
 
   * Updating to standards version 3.9.3.

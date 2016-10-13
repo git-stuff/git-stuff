@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: git-stuff@packages.debian.org\n"
+"POT-Creation-Date: 2012-09-28 16:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:1001
+msgid "Git repack repositories"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid "Enable cron job?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid ""
+"Git repositories tend to grow quite large quickly. To save space and "
+"maintain optimal performance they should be repacked from time to time "
+"(reducing the number of files in the objects subdirectory)."
+msgstr ""
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:3001
+msgid "/srv/git"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid "Git directories:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid ""
+"Please specify the directory or directories (space separated) used as root "
+"for the Git repositories on the server. Note that git-repack-repositories "
+"will work recursively."
+msgstr ""
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:4001
+msgid "@monthly"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Git cron job scheduling:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Please choose when the cron job should be started."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid ""
+"See crontab(5) for the format definition. If it is left empty, the default "
+"value \"@monthly\" (without the quotes) will be used, executing the cron job "
+"every month."
+msgstr ""
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:5001
+msgid "Additional Git utilities"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid "Should shortcut definitions be activated?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid ""
+"Special shortcut definitions for Bash can be activated in /etc/profile.d."
+msgstr ""

@@ -1,0 +1,115 @@
+# Slovak debconf translations for git-stuff
+# Copyright (C) 2012 Slavko <linux@slavino.sk>
+# This file is distributed under the same license as the git-stuff package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: git-stuff 11-2\n"
+"Report-Msgid-Bugs-To: git-stuff@packages.debian.org\n"
+"POT-Creation-Date: 2012-09-28 16:27+0200\n"
+"PO-Revision-Date: 2012-09-09 18:48+0200\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: slovenčina <debian-l10n-slovak@lists.debian.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:1001
+msgid "Git repack repositories"
+msgstr "Opätovné zbalenie úložísk Git"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid "Enable cron job?"
+msgstr "Zapnúť úlohu cron?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid ""
+"Git repositories tend to grow quite large quickly. To save space and "
+"maintain optimal performance they should be repacked from time to time "
+"(reducing the number of files in the objects subdirectory)."
+msgstr ""
+"Úložiská Git majú tendenciu rýchlo rásť. Na ušetrenie miesta a udržiavanie "
+"optimálneho výkonu ich treba občas opätovne zbaliť (zmenšením počtu súborov "
+"v podadresári objektov)."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:3001
+msgid "/srv/git"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid "Git directories:"
+msgstr "Adresáre Git:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid ""
+"Please specify the directory or directories (space separated) used as root "
+"for the Git repositories on the server. Note that git-repack-repositories "
+"will work recursively."
+msgstr ""
+"Prosím, zadajte adresár alebo adresáre (oddelené medzerou), použité ako "
+"koreň úložísk Git na serveri. Pamätajte, že git-repack-repositories bude "
+"pracovať rekurzívne."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:4001
+msgid "@monthly"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Git cron job scheduling:"
+msgstr "Plánovanie úlohy cron pre Git:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Please choose when the cron job should be started."
+msgstr "Prosím, vyberte kedy má byť úloha cron spúšťaná."
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid ""
+"See crontab(5) for the format definition. If it is left empty, the default "
+"value \"@monthly\" (without the quotes) will be used, executing the cron job "
+"every month."
+msgstr ""
+"Definíciu formátu hľadajte v crontab(5). Ak ponecháte pole prázdne, bude "
+"použitá predvolená hodnota „@monthly” (bez úvodzoviek), ktorá bude spúšťať "
+"úlohu cron každý mesiac."
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:5001
+msgid "Additional Git utilities"
+msgstr "Doplnkové nástroje Git"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid "Should shortcut definitions be activated?"
+msgstr "Majú byť aktivované definície skratiek?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid ""
+"Special shortcut definitions for Bash can be activated in /etc/profile.d."
+msgstr ""
+"Môžu byť aktivované definície špeciálnych skratiek pre Bash v /etc/profile.d."

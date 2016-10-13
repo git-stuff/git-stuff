@@ -1,0 +1,118 @@
+# German debconf translations for git-stuff
+# Copyright (C) 2012 Holger Wansing <linux@wansing-online.de>
+# Copyright (C) 2012 Daniel Baumann <daniel.baumann@progress-technologies.net>
+# This file is distributed under the same license as the git-stuff package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: git-stuff\n"
+"Report-Msgid-Bugs-To: git-stuff@packages.debian.org\n"
+"POT-Creation-Date: 2012-09-28 16:27+0200\n"
+"PO-Revision-Date: 2012-09-28 16:42+0200\n"
+"Last-Translator: Daniel Baumann <daniel.baumann@progress-technologies.net>\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:1001
+msgid "Git repack repositories"
+msgstr "Neu packen der Git Repositories"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid "Enable cron job?"
+msgstr "Cron Job aktivieren?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid ""
+"Git repositories tend to grow quite large quickly. To save space and "
+"maintain optimal performance they should be repacked from time to time "
+"(reducing the number of files in the objects subdirectory)."
+msgstr ""
+"Git Repositories tendieren dazu, schnell ziemlich gross zu werden. Um "
+"Speicherplatz zu sparen und optimale Performance aufrecht zu erhalten, "
+"sollten diese von Zeit zu Zeit neu gepackt werden (was die Zahl der Dateien "
+"im objects Unterverzeichnis vermindert)."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:3001
+msgid "/srv/git"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid "Git directories:"
+msgstr "Git Verzeichnisse:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid ""
+"Please specify the directory or directories (space separated) used as root "
+"for the Git repositories on the server. Note that git-repack-repositories "
+"will work recursively."
+msgstr ""
+"Bitte geben Sie das oder die Verzeichnisse (durch Leerzeichen getrennt) an, "
+"welche als Wurzelverzeichnis für die Git Repositories auf dem Server "
+"verwendet werden sollen. Beachten Sie, dass git-repack-repositories rekursiv "
+"arbeiten wird."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:4001
+msgid "@monthly"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Git cron job scheduling:"
+msgstr "Zeitpunkt des Git CronJobs:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Please choose when the cron job should be started."
+msgstr "Bitte wählen Sie, wann der Cron Job gestartet werden soll."
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid ""
+"See crontab(5) for the format definition. If it is left empty, the default "
+"value \"@monthly\" (without the quotes) will be used, executing the cron job "
+"every month."
+msgstr ""
+"In crontab(5) finden Sie die Definition des Formats. Wenn dies leer bleibt, "
+"wird der Standardwert \"@monthly\" (ohne Anführungszeichen) verwendet, so "
+"dass der Cron Job jeden Monat ausgeführt wird."
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:5001
+msgid "Additional Git utilities"
+msgstr "Zusätzliche Git Werkzeuge"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid "Should shortcut definitions be activated?"
+msgstr "Sollen Tastatur Abkürzungen aktiviert werden?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid ""
+"Special shortcut definitions for Bash can be activated in /etc/profile.d."
+msgstr ""
+"Spezielle Tastatur Abkürzungen für Bash können in /etc/profile.d aktiviert "
+"werden."

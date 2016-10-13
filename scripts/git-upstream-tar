@@ -9,28 +9,24 @@
 
 set -e
 
-TAR="${1}"
+TARBALL="${1}"
+TARBALLS="${@}"
 
-if [ -z "${TAR}" ]; then
-	echo "Usage: $0 upstream.tar.gz"
+if [ -z "${TARBALLS}" ]; then
+	echo "Usage: ${0} upstream_1.2.3.orig.tar.gz [upstream_1.2.3-foo.orig.tar.gz] [upstream_1.2.3-bar.orig.tar.gz] [...]"
 	exit 1
 fi
 
-if [ -n "${2}" ]
-then
-	VERSION="${2}"
-else
-	VERSION="$(basename ${TAR} | awk -F_ '{ print $2 }' | sed -e 's|.orig.tar.gz||' -e 's|.tar.gz||' -e 's|.orig.tar.bz2||' -e 's|.tar.bz2||' -e 's|.orig.xz||' -e 's|.tar.xz||' -e 's|.orig.tar.lz||' -e 's|.tar.lz||')"
-fi
-
-if [ -z "${VERSION}" ]; then
-	echo "Usage $0 upstream.tar.gz VERSION"
-	exit 1
-fi
+VERSION="$(basename ${TARBALL} | awk -F_ '{ print $2 }' | sed -e 's|.orig.tar.gz||' -e 's|.tar.gz||' -e 's|.orig.tar.bz2||' -e 's|.tar.bz2||' -e 's|.orig.xz||' -e 's|.tar.xz||' -e 's|.orig.tar.lz||' -e 's|.tar.lz||')"
 
 if ! git branch | grep -qs upstream
 then
 	git branch -m master upstream
 fi
 
-pristine-tar commit -m "Adding pristine-tar version ${VERSION}." ${TAR}
+for _TARBALL in ${TARBALLS}
+do
+	echo "P: Adding pristine-tar version ${VERSION} (${_TARBALL})."
+
+	pristine-tar commit -m "Adding pristine-tar version ${VERSION}." ${_TARBALL}
+done

@@ -1,43 +1,39 @@
 Template: git-repack-repositories/title
 Type: title
-Description: Git Repack Repositories
+_Description: Git repack repositories
 
 Template: git-repack-repositories/enable
 Type: boolean
 Default: false
-Description: Git repack:
- Git repositories tend to grow quite large quickly. From time to time, you
- have to repack the repositories to save space and keep optimal
- performances (by not having too many of files in the objects
- subdirectory).
- .
- Do you want to enable the cron job?
+_Description: Enable cron job?
+ Git repositories tend to grow quite large quickly. To save space and
+ maintain optimal performance they should be repacked from time to time
+ (reducing the number of files in the objects subdirectory).
 
 Template: git-repack-repositories/directories
 Type: string
-Default: /srv/git
-Description: Git directories:
- Please specify the directory or directories (space separated) that is used
- as root for the Git repositories on your server. Note that
- git-repack-repositories will work recursively.
+_Default: /srv/git
+_Description: Git directories:
+ Please specify the directory or directories (space separated) used as root
+ for the Git repositories on the server. Note that git-repack-repositories
+ will work recursively.
 
 Template: git-repack-repositories/cron
 Type: string
-Default: @monthly
-Description: Git cron:
- What times should the cron job be started? Please refer to crontab(5) for
- the format definition. The default or if left empty will set the interval
- to '@monthly' (without the quotes) which means it gets executed every
- beginning of the month at midnight.
+_Default: @monthly
+_Description: Git cron job scheduling:
+ Please choose when the cron job should be started.
+ .
+ See crontab(5) for the format definition. If it is left empty, the default
+ value "@monthly" (without the quotes) will be used, executing the cron job
+ every month.
 
 Template: git-stuff/title
 Type: title
-Description: additional Git utilities
+_Description: Additional Git utilities
 
 Template: git-stuff/bash-profile
 Type: boolean
 Default: false
-Description: Shortcuts for Bash (/etc/profile.d)
- Should special shortcut definitions for Bash be activated in /etc/profile.d?
- .
- If unsure, say no.
+_Description: Should shortcut definitions be activated?
+ Special shortcut definitions for Bash can be activated in /etc/profile.d.
