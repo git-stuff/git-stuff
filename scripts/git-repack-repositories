@@ -38,7 +38,7 @@ do
 	[ "${_QUIET}" ] || echo "--------------------------------------------------------------------------------"
 
 	cd ${_REPOSITORY}
-	git repack ${_GIT_REPACK_OPTIONS} -a -d && git gc ${_GIT_GC_OPTIONS} --aggressive --prune
+	git repack ${_GIT_REPACK_OPTIONS} -a -d -F && git gc ${_GIT_GC_OPTIONS} --aggressive --prune
 	cd ..
 
 	if [ "$(id -u)" -eq "0" ]
