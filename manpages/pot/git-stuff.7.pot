@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2011-07-27 08:59+0300\n"
+"POT-Creation-Date: 2011-08-09 16:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,13 +25,13 @@ msgstr ""
 #. type: TH
 #: en/git-stuff.7:9
 #, no-wrap
-msgid "2011-07-27"
+msgid "2011-08-09"
 msgstr ""
 
 #. type: TH
 #: en/git-stuff.7:9
 #, no-wrap
-msgid "1"
+msgid "3"
 msgstr ""
 
 #. type: TH

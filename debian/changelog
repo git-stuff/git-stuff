@@ -1,3 +1,12 @@
+git-stuff (3-1) unstable; urgency=low
+
+  * Move --quiet invocation from git-repack-repositories-cron to the
+    actual cronjob, that way the cron job is verbose when manually
+    invoked.
+  * Making git-repack-repositories-cron to be recursive by default.
+
+ -- Daniel Baumann <daniel.baumann@progress-linux.org>  Tue, 09 Aug 2011 16:15:10 +0200
+
 git-stuff (2-1) unstable; urgency=low
 
   * git-debian-tag: Strip leading 'debian/' from tags.

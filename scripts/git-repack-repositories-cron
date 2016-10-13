@@ -26,15 +26,22 @@ then
 	exit 1
 fi
 
-for _DIRECTORY in ${GIT_REPACK_REPOSITORIES_DIRECTORIES}
+for _USER_DIRECTORY in ${GIT_REPACK_REPOSITORIES_DIRECTORIES}
 do
-	if [ ! -e "${_DIRECTORY}" ]
+	if [ ! -e "${_USER_DIRECTORY}" ]
 	then
-		echo "W: ${_DIRECTORY} - no such file or directory, skipping."
+		echo "W: ${_USER_DIRECTORY} - no such file or directory, skipping."
 		continue
 	fi
 
-	cd "${_DIRECTORY}"
-	git-repack-repositories --quiet
-	cd "${OLDPWD}"
+	cd "${_USER_DIRECTORY}"
+
+	_SUB_DIRECTORIES="$(for _DIRECTORY in $(find . -type d -name "*.git"); do echo $(dirname $_DIRECTORY); done | sort -u)"
+
+	for _SUB_DIRECTORY in ${_SUB_DIRECTORIES}
+	do
+		cd "${_SUB_DIRECTORY}"
+		git-repack-repositories ${@}
+		cd "${OLDPWD}"
+	done
 done

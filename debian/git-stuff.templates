@@ -5,7 +5,7 @@ _Description: Git Repack Repositories
 Template: git-repack-repositories/enable
 Type: boolean
 Default: false
-_Description: Enable automatic repacking of Git repositories?
+_Description: Git repack:
  Git repositories tend to grow quite large quickly. From time to time, you
  have to repack the repositories to save space and keep optimal
  performances (by not having too many of files in the objects
@@ -18,7 +18,8 @@ Type: string
 _Default: /srv/git
 _Description: Git directories:
  Please specify the directory or directories (space separated) that is used
- as root for the Git repositories on your server.
+ as root for the Git repositories on your server. Note that
+ git-repack-repositories will work recursively.
 
 Template: git-repack-repositories/cron
 Type: string
