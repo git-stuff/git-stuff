@@ -16,7 +16,7 @@ fi
 
 if [ "${GIT_REPACK_REPOSITORIES_ENABLE}" != "true" ]
 then
-	echo "P: git-repack-repositories is disabled in /etc/default/git-repack-repositories."
+	# git-repack-repositories is disabled in /etc/default/git-repack-repositories
 	exit 0
 fi
 
