@@ -1,3 +1,13 @@
+git-stuff (6-1) unstable; urgency=low
+
+  * Adding git-amend-all script.
+  * Adding git-commit-lazy script.
+  * Adding shortcut example file for /etc/profile.d.
+  * Adding documentation for git-amend-all.
+  * Improving git-checkout-branches long-description.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Mon, 05 Sep 2011 13:37:44 +0200
+
 git-stuff (5-1) unstable; urgency=low
 
   * Correcting wrong license description in copyright.

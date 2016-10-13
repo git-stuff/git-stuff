@@ -6,6 +6,7 @@ case "${1}" in
 	purge)
 		rm -f /etc/default/git-repack-repositories
 		rm -f /etc/cron.d/git-repack-repositories
+		rm -f /etc/profile.d/git-stuff.sh
 		;;
 
 	remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2011-08-23 09:26+0300\n"
+"POT-Creation-Date: 2011-09-05 13:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,60 +17,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: TH
-#: en/git-checkout-branches.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-stuff.7:9
 #, no-wrap
 msgid "GIT-STUFF"
 msgstr ""
 
 #. type: TH
-#: en/git-checkout-branches.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-stuff.7:9
 #, no-wrap
-msgid "2011-08-23"
+msgid "2011-09-05"
 msgstr ""
 
 #. type: TH
-#: en/git-checkout-branches.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-stuff.7:9
 #, no-wrap
 msgid "4"
 msgstr ""
 
 #. type: TH
-#: en/git-checkout-branches.1:9 en/git-stuff.7:9
+#: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-stuff.7:9
 #, no-wrap
 msgid "Git Stuff"
 msgstr ""
 
 #. type: SH
-#: en/git-checkout-branches.1:11 en/git-stuff.7:11
+#: en/git-amend-all.1:11 en/git-checkout-branches.1:11 en/git-stuff.7:11
 #, no-wrap
 msgid "NAME"
 msgstr ""
 
 #. type: SH
-#: en/git-checkout-branches.1:17 en/git-stuff.7:14
+#: en/git-amend-all.1:17 en/git-checkout-branches.1:17 en/git-stuff.7:14
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr ""
 
 #. type: SH
-#: en/git-checkout-branches.1:23 en/git-stuff.7:23
+#: en/git-amend-all.1:23 en/git-checkout-branches.1:23 en/git-stuff.7:25
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
 
 #. type: Plain text
-#: en/git-checkout-branches.1:25 en/git-stuff.7:25
+#: en/git-amend-all.1:25 en/git-checkout-branches.1:25 en/git-stuff.7:27
 msgid "I<git>(1)"
 msgstr ""
 
 #. type: SH
-#: en/git-checkout-branches.1:30 en/git-stuff.7:26
+#: en/git-amend-all.1:30 en/git-checkout-branches.1:30 en/git-stuff.7:28
 #, no-wrap
 msgid "BUGS"
 msgstr ""
 
 #. type: Plain text
-#: en/git-checkout-branches.1:32 en/git-stuff.7:28
+#: en/git-amend-all.1:32 en/git-checkout-branches.1:32 en/git-stuff.7:30
 msgid ""
 "Bugs can be reported by submitting a bugreport for the git-stuff package in "
 "the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
@@ -78,13 +78,13 @@ msgid ""
 msgstr ""
 
 #. type: SH
-#: en/git-checkout-branches.1:33 en/git-stuff.7:29
+#: en/git-amend-all.1:33 en/git-checkout-branches.1:33 en/git-stuff.7:31
 #, no-wrap
 msgid "AUTHOR"
 msgstr ""
 
 #. type: Plain text
-#: en/git-checkout-branches.1:34 en/git-stuff.7:30
+#: en/git-amend-all.1:34 en/git-checkout-branches.1:34 en/git-stuff.7:32
 msgid ""
 "git-stuff was written by Daniel Baumann E<lt>I<daniel.baumann@progress-"
 "technologies.net>E<gt>."
@@ -116,10 +116,21 @@ msgstr ""
 #. type: IP
 #: en/git-stuff.7:20
 #, no-wrap
-msgid "I<git-checkout-branches>(1)"
+msgid "I<git-amend-all>(1)"
 msgstr ""
 
 #. type: Plain text
 #: en/git-stuff.7:22
+msgid "adds all untracked files and amend all changes to the last commit."
+msgstr ""
+
+#. type: IP
+#: en/git-stuff.7:22
+#, no-wrap
+msgid "I<git-checkout-branches>(1)"
+msgstr ""
+
+#. type: Plain text
+#: en/git-stuff.7:24
 msgid "checks out all remote branches."
 msgstr ""

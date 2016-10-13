@@ -29,3 +29,15 @@ Description: Git cron:
  the format definition. The default or if left empty will set the interval
  to '@monthly' (without the quotes) which means it gets executed every
  beginning of the month at midnight.
+
+Template: git-stuff/title
+Type: title
+Description: additional Git utilities
+
+Template: git-stuff/bash-profile
+Type: boolean
+Default: false
+Description: Shortcuts for Bash (/etc/profile.d)
+ Should special shortcut definitions for Bash be activated in /etc/profile.d?
+ .
+ If unsure, say no.

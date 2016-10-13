@@ -11,6 +11,10 @@ Architecture: all
 Depends: ${misc:Depends}, git
 Recommends: cron, git-buildpackage, mr, pristine-tar
 Description: additional Git utilities
- This is a growing collection of tools for the Git Version Control System:
+ This is a growing collection of tools for the Git Version Control System.
  .
+ Currently the following tools have been documented:
+ .
+  * git-amend-all: adds all untracked files and amend all changes to the last
+    commit
   * git-checkout-branches: checks out all remote branches

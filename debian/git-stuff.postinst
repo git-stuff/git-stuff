@@ -18,6 +18,9 @@ case "${1}" in
 		db_get git-repack-repositories/cron
 		GIT_REPACK_REPOSITORIES_CRON="${RET:-@monthly}" # string (w/o empty)
 
+		db_get git-stuff/bash-profile
+		GIT_STUFF_BASH_PROFILE="${RET}" # boolean
+
 		db_stop
 
 
@@ -81,6 +84,17 @@ EOF
 		< "${CRONFILE}" > "${CRONFILE}.tmp"
 
 		mv -f "${CRONFILE}.tmp" "${CRONFILE}"
+
+
+		## Bash Profile file handling
+
+		rm -f /etc/profile.d/git-stuff.sh
+
+		case "${GIT_STUFF_BASH_PROFILE}" in
+			true)
+				ln -s /usr/share/git-stuff/git-stuff_profile.sh /etc/profile.d/git-stuff.sh
+				;;
+		esac
 		;;
 
 	abort-upgrade|abort-remove|abort-deconfigure)
