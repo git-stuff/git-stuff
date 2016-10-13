@@ -16,7 +16,7 @@ case "${1}" in
 	-h|--help)
 		echo "git-${_MODE}-changelog - wrapper over git-dch(1)"
 		echo
-		echo "Usage: ${0} [COMMIT]"
+		echo "Usage: ${0} [ID]"
 
 		exit 0
 		;;

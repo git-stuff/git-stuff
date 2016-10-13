@@ -9,16 +9,17 @@
 .TH GIT\-STUFF 1 2011\-10\-08 8 "Git Stuff"
 
 .SH NAME
-\fBgit\-amend\-all\fR \- add and amend everything to last commit
+\fBgit\-debian\-add\fR \- creates a new commit and tag with all untracked files and changes as new debian version.
 
 .SH SYNOPSIS
-\fBgit\-amend\-all\fR
+\fBgit\-debian\-add\fR [\fIVERSION\fR]
 
 .SH DESCRIPTION
-\fBgit\-amend\-all\fR is a program that adds all untracked files and amends all changes to the last commit.
+\fBgit\-debian\-add\fR is a program that creates a new commit and tag with all untracked files and changes as a new debian version using the commit message 'Adding debian version \fIVERSION\fR.' and 'Tagging debian version \fIVERSION\fR.'. If no version is specified, \fIVERSION\fR is automatically replaced with the newest version entry (without epoche) from debian/changelog.
 
 .SH OPTIONS
-git\-amend\-all has no options.
+.IP "\fIVERSION\fR" 4
+git\-debian\-add uses dpkg-parsechangelog from the dpkg-dev package to automatically determine the debian version to be added. This can be overriden by manually specifying the version as first argument.
 
 .SH SEE ALSO
 \fIgit\fR(1)

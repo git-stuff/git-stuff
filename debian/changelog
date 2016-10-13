@@ -1,3 +1,20 @@
+git-stuff (8-1) unstable; urgency=low
+
+  * Updating todo file.
+  * Adding shebang in git-stuff example shortcut script.
+  * Adding ciabot.sh as git-hook-notification-cia.
+  * Removing useless whitespaces from git-hook-notification-cia.
+  * Using compression level 9 also for binary packages.
+  * Documenting git-debian-add.
+  * Updating usage message of git-debian-changelog.
+  * Respecting editor variable in bash shortcuts for dc command.
+  * Adding old packaging workflow to docs, need to be updated and
+    transformed in a full guide later.
+  * Adding old packaging recommendations to docs, need to be updated and
+    transformed in a full guide later.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sat, 08 Oct 2011 13:15:44 +0200
+
 git-stuff (7-1) unstable; urgency=low
 
   * Creating cron job directory in postinst (Closes: #640598).

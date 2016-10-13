@@ -8,3 +8,6 @@ override_dh_auto_install:
 
 	# removing unused files
 	rm -f debian/git-stuff/usr/share/doc/git-stuff/COPYING
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip -z9

@@ -11,32 +11,35 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH GIT\-STUFF 7 08.10.2011 8 "Git Stuff"
+.TH GIT\-STUFF 1 08.10.2011 8 "Git Stuff"
 
 .SH NAME
-\fBgit\-stuff\fP \- zusätzliche Git Hilfsprogramme
-
-.SH BESCHREIBUNG
-\fBgit\-stuff\fP ist eine wachsende Sammlung von Werkzeugen für das Git
-Versionsverwaltungssystem.
-
-.SH PROGRAMME
-\fBgit\-stuff\fP enthält derzeit folgende Programme.
-
-.IP \fIgit\-amend\-all\fP(1) 4
-fügt alle Untracked Dateien hinzu und commited diese zusammen mit allen
-anderen Änderungen zum letzten Commit.
-.IP \fIgit\-checkout\-branches\fP(1) 4
-checkt alle Remote Branches aus.
-.IP \fIgit\-commit\-lazy\fP(1) 4
-erstellt einen neuen Commit mit allen Untracked Dateien und allen
-Änderungen.
-.IP \fIgit\-debian\-add\fP(1) 4
 \fBgit\-commit\-lazy\fP \- erstellt einen neuen Commit und Tag mit allen Untracked
 Dateien und allen Änderungen als neue Debian Version.
 
+.SH SYNTAX
+\fBgit\-debian\-add\fP [\fIVERSION\fP]
+
+.SH BESCHREIBUNG
+\fBgit\-debian\-add\fP ist ein Programm das einen neuen Commit und Tag mit der
+Message 'Adding debian version \fIVERSION\fP.' und 'Tagging debian version
+\fIVERSION\fP.' erstellt, mit allen Untracked Dateien und Änderungen. Ist keine
+Version angegeben, wird \fIVERSION\fP automatisch ersetzt mit dem neuesten
+Versionseintrag (ohne Epoche) von debian/changelog.
+
+.SH OPTIONEN
+.IP \fIVERSION\fP 4
+git\-debian\-add benutzt dpkg\-parsechangelog aus dem dpkg\-dev Paket um
+automatisch die hinzuzufügende Debian version zu bestimmen. Dies kann
+überschrieben werden indem manuell die Version als erstes Argument angegeben
+wird.
+
 .SH "SIEHE AUCH"
 \fIgit\fP(1)
+.PP
+\fIgit\-stuff\fP(7)
+.PP
+Dieses Programm ist Teil von git\-stuff.
 
 .SH FEHLER
 Fehler können durch Einreichen eines Fehlerberichtes für das git\-stuff Paket

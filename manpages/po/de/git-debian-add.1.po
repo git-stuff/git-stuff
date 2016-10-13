@@ -50,22 +50,12 @@ msgstr "Git Stuff"
 msgid "NAME"
 msgstr "NAME"
 
-#. type: Plain text
-#: en/git-amend-all.1:13
-msgid "B<git-amend-all> - add and amend everything to last commit"
-msgstr "B<git-amend-all> - fügt und hängt alles zum letzten Commit hinzu"
-
 #. type: SH
 #: en/git-amend-all.1:14 en/git-checkout-branches.1:14 en/git-commit-lazy.1:14
 #: en/git-debian-add.1:14
 #, no-wrap
 msgid "SYNOPSIS"
 msgstr "SYNTAX"
-
-#. type: Plain text
-#: en/git-amend-all.1:16
-msgid "B<git-amend-all>"
-msgstr "B<git-amend-all>"
 
 #. type: SH
 #: en/git-amend-all.1:17 en/git-checkout-branches.1:17 en/git-commit-lazy.1:17
@@ -74,26 +64,12 @@ msgstr "B<git-amend-all>"
 msgid "DESCRIPTION"
 msgstr "BESCHREIBUNG"
 
-#. type: Plain text
-#: en/git-amend-all.1:19
-msgid ""
-"B<git-amend-all> is a program that adds all untracked files and amends all "
-"changes to the last commit."
-msgstr ""
-"B<git-amend-all> ist ein Programm das alle Untracked Dateien hinzufügt und "
-"commited diese zusammen mit allen anderen Änderungen zum letzten Commit."
-
 #. type: SH
 #: en/git-amend-all.1:20 en/git-checkout-branches.1:20 en/git-commit-lazy.1:20
 #: en/git-debian-add.1:20
 #, no-wrap
 msgid "OPTIONS"
 msgstr "OPTIONEN"
-
-#. type: Plain text
-#: en/git-amend-all.1:22
-msgid "git-amend-all has no options."
-msgstr "git-amend-all hat keine Optionen."
 
 #. type: SH
 #: en/git-amend-all.1:23 en/git-checkout-branches.1:23 en/git-commit-lazy.1:23
@@ -155,3 +131,51 @@ msgid ""
 msgstr ""
 "git-stuff wurde von Daniel Baumann E<lt>I<daniel.baumann@progress-"
 "technologies.net>E<gt> geschrieben."
+
+#. type: Plain text
+#: en/git-debian-add.1:13
+msgid ""
+"B<git-debian-add> - creates a new commit and tag with all untracked files "
+"and changes as new debian version."
+msgstr ""
+"B<git-commit-lazy> - erstellt einen neuen Commit und Tag mit allen Untracked "
+"Dateien und allen Änderungen als neue Debian Version."
+
+#. type: Plain text
+#: en/git-debian-add.1:16
+msgid "B<git-debian-add> [I<VERSION>]"
+msgstr "B<git-debian-add> [I<VERSION>]"
+
+#. type: Plain text
+#: en/git-debian-add.1:19
+msgid ""
+"B<git-debian-add> is a program that creates a new commit and tag with all "
+"untracked files and changes as a new debian version using the commit message "
+"'Adding debian version I<VERSION>.' and 'Tagging debian version "
+"I<VERSION>.'. If no version is specified, I<VERSION> is automatically "
+"replaced with the newest version entry (without epoche) from debian/"
+"changelog."
+msgstr ""
+"B<git-debian-add> ist ein Programm das einen neuen Commit und Tag mit der "
+"Message 'Adding debian version I<VERSION>.' und 'Tagging debian version "
+"I<VERSION>.' erstellt, mit allen Untracked Dateien und Änderungen. Ist keine "
+"Version angegeben, wird I<VERSION> automatisch ersetzt mit dem neuesten "
+"Versionseintrag (ohne Epoche) von debian/changelog."
+
+#. type: IP
+#: en/git-debian-add.1:21
+#, no-wrap
+msgid "I<VERSION>"
+msgstr "I<VERSION>"
+
+#. type: Plain text
+#: en/git-debian-add.1:23
+msgid ""
+"git-debian-add uses dpkg-parsechangelog from the dpkg-dev package to "
+"automatically determine the debian version to be added. This can be "
+"overriden by manually specifying the version as first argument."
+msgstr ""
+"git-debian-add benutzt dpkg-parsechangelog aus dem dpkg-dev Paket um "
+"automatisch die hinzuzufügende Debian version zu bestimmen. Dies kann "
+"überschrieben werden indem manuell die Version als erstes Argument angegeben "
+"wird."

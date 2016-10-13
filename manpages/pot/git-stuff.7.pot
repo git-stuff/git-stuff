@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2011-09-06 13:05+0300\n"
+"POT-Creation-Date: 2011-10-08 13:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,69 +18,69 @@ msgstr ""
 
 #. type: TH
 #: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-stuff.7:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9
 #, no-wrap
 msgid "GIT-STUFF"
 msgstr ""
 
 #. type: TH
 #: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-stuff.7:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9
 #, no-wrap
-msgid "2011-09-06"
+msgid "2011-10-08"
 msgstr ""
 
 #. type: TH
 #: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-stuff.7:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9
 #, no-wrap
-msgid "4"
+msgid "8"
 msgstr ""
 
 #. type: TH
 #: en/git-amend-all.1:9 en/git-checkout-branches.1:9 en/git-commit-lazy.1:9
-#: en/git-stuff.7:9
+#: en/git-debian-add.1:9 en/git-stuff.7:9
 #, no-wrap
 msgid "Git Stuff"
 msgstr ""
 
 #. type: SH
 #: en/git-amend-all.1:11 en/git-checkout-branches.1:11 en/git-commit-lazy.1:11
-#: en/git-stuff.7:11
+#: en/git-debian-add.1:11 en/git-stuff.7:11
 #, no-wrap
 msgid "NAME"
 msgstr ""
 
 #. type: SH
 #: en/git-amend-all.1:17 en/git-checkout-branches.1:17 en/git-commit-lazy.1:17
-#: en/git-stuff.7:14
+#: en/git-debian-add.1:17 en/git-stuff.7:14
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr ""
 
 #. type: SH
 #: en/git-amend-all.1:23 en/git-checkout-branches.1:23 en/git-commit-lazy.1:23
-#: en/git-stuff.7:27
+#: en/git-debian-add.1:24 en/git-stuff.7:29
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
 
 #. type: Plain text
 #: en/git-amend-all.1:25 en/git-checkout-branches.1:25 en/git-commit-lazy.1:25
-#: en/git-stuff.7:29
+#: en/git-debian-add.1:26 en/git-stuff.7:31
 msgid "I<git>(1)"
 msgstr ""
 
 #. type: SH
 #: en/git-amend-all.1:30 en/git-checkout-branches.1:30 en/git-commit-lazy.1:30
-#: en/git-stuff.7:30
+#: en/git-debian-add.1:31 en/git-stuff.7:32
 #, no-wrap
 msgid "BUGS"
 msgstr ""
 
 #. type: Plain text
 #: en/git-amend-all.1:32 en/git-checkout-branches.1:32 en/git-commit-lazy.1:32
-#: en/git-stuff.7:32
+#: en/git-debian-add.1:33 en/git-stuff.7:34
 msgid ""
 "Bugs can be reported by submitting a bugreport for the git-stuff package in "
 "the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
@@ -89,14 +89,14 @@ msgstr ""
 
 #. type: SH
 #: en/git-amend-all.1:33 en/git-checkout-branches.1:33 en/git-commit-lazy.1:33
-#: en/git-stuff.7:33
+#: en/git-debian-add.1:34 en/git-stuff.7:35
 #, no-wrap
 msgid "AUTHOR"
 msgstr ""
 
 #. type: Plain text
 #: en/git-amend-all.1:34 en/git-checkout-branches.1:34 en/git-commit-lazy.1:34
-#: en/git-stuff.7:34
+#: en/git-debian-add.1:35 en/git-stuff.7:36
 msgid ""
 "git-stuff was written by Daniel Baumann E<lt>I<daniel.baumann@progress-"
 "technologies.net>E<gt>."
@@ -156,4 +156,17 @@ msgstr ""
 #. type: Plain text
 #: en/git-stuff.7:26
 msgid "creates a new commit with all untracked files and changes."
+msgstr ""
+
+#. type: IP
+#: en/git-stuff.7:26
+#, no-wrap
+msgid "I<git-debian-add>(1)"
+msgstr ""
+
+#. type: Plain text
+#: en/git-stuff.7:28
+msgid ""
+"creates a new commit and tag with all untracked files and changes as new "
+"debian version."
 msgstr ""

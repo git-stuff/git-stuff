@@ -6,6 +6,13 @@ Files: scripts/git-hook-notification-bts
 Copyright: (C) 2009 Adeodato Simó <dato@net.com.org.es>
 License: MIT
 
+Files: scripts/git-hook-notification-cia
+Copyright:
+ (C) 2006 Fernando J. Pereda <ferdy@gentoo.org>
+ (C) 2008 Natanael Copa <natanael.copa@gmail.com>
+ (C) 2010 Eric S. Raymond <esr@thyrsus.com>
+License: GPL-2
+
 Files: scripts/git-hook-notification-cia.pl
 Copyright: (C) 2001-2005 Petr Baudis <pasky@ucw.cz>
 License: GPL-2
