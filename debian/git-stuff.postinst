@@ -4,8 +4,8 @@ set -e
 
 . /usr/share/debconf/confmodule
 
-CONFFILE="/etc/default/git-repack-repositories"
-CRONFILE="/etc/cron.d/git-repack-repositories"
+_CONFFILE="/etc/default/git-stuff"
+_CRONFILE="/etc/cron.d/git-stuff"
 
 case "${1}" in
 	configure)
@@ -26,11 +26,11 @@ case "${1}" in
 
 		## Defaults file handling
 
-		if [ ! -e "${CONFFILE}" ]
+		if [ ! -e "${_CONFFILE}" ]
 		then
 
-cat > "${CONFFILE}" << EOF
-# /etc/default/git-repack-repositories
+cat > "${_CONFFILE}" << EOF
+# /etc/default/git-stuff
 
 GIT_REPACK_REPOSITORIES_ENABLE="${GIT_REPACK_REPOSITORIES_ENABLE}"
 GIT_REPACK_REPOSITORIES_DIRECTORIES="${GIT_REPACK_REPOSITORIES_DIRECTORIES}"
@@ -38,34 +38,34 @@ EOF
 
 		fi
 
-		cp -a -f "${CONFFILE}" "${CONFFILE}.tmp"
+		cp -a -f "${_CONFFILE}" "${_CONFFILE}.tmp"
 
 		# If the admin deleted or commented some variables but then set
 		# them via debconf, (re-)add them to the config file.
 
 		test -z "${GIT_REPACK_REPOSITORIES_ENABLE}" || \
-		grep -Eq '^ *GIT_REPACK_REPOSITORIES_ENABLE=' "${CONFFILE}" || \
-		echo "GIT_REPACK_REPOSITORIES_ENABLE=" >> "${CONFFILE}"
+		grep -Eq '^ *GIT_REPACK_REPOSITORIES_ENABLE=' "${_CONFFILE}" || \
+		echo "GIT_REPACK_REPOSITORIES_ENABLE=" >> "${_CONFFILE}"
 
 		test -z "${GIT_REPACK_REPOSITORIES_DIRECTORIES}" || \
-		grep -Eq '^ *GIT_REPACK_REPOSITORIES_DIRECTORIES=' "${CONFFILE}" || \
-		echo "GIT_REPACK_REPOSITORIES_DIRECTORIES=" >> "${CONFFILE}"
+		grep -Eq '^ *GIT_REPACK_REPOSITORIES_DIRECTORIES=' "${_CONFFILE}" || \
+		echo "GIT_REPACK_REPOSITORIES_DIRECTORIES=" >> "${_CONFFILE}"
 
 		sed -e "s|^ *GIT_REPACK_REPOSITORIES_ENABLE=.*|GIT_REPACK_REPOSITORIES_ENABLE=\"${GIT_REPACK_REPOSITORIES_ENABLE}\"|" \
 		    -e "s|^ *GIT_REPACK_REPOSITORIES_DIRECTORIES=.*|GIT_REPACK_REPOSITORIES_DIRECTORIES=\"${GIT_REPACK_REPOSITORIES_DIRECTORIES}\"|" \
-		< "${CONFFILE}" > "${CONFFILE}.tmp"
+		< "${_CONFFILE}" > "${_CONFFILE}.tmp"
 
-		mv -f "${CONFFILE}.tmp" "${CONFFILE}"
+		mv -f "${_CONFFILE}.tmp" "${_CONFFILE}"
 
 
 		## Cron file handling
 
-		if [ ! -e "${CRONFILE}" ]
+		if [ ! -e "${_CRONFILE}" ]
 		then
 			mkdir -p /etc/cron.d
 
-cat > "${CRONFILE}" << EOF
-# /etc/cron.d/git-repack-repositories
+cat > "${_CRONFILE}" << EOF
+# /etc/cron.d/git-stuff
 
 # By default this is run @monthly, see crontab(5) for more information.
 ${GIT_REPACK_REPOSITORIES_CRON} root if [ -x /usr/bin/git-repack-repositories-cron ]; then /usr/bin/git-repack-repositories-cron --quiet; fi
@@ -73,27 +73,27 @@ EOF
 
 		fi
 
-		cp -a -f "${CRONFILE}" "${CRONFILE}.tmp"
+		cp -a -f "${_CRONFILE}" "${_CRONFILE}.tmp"
 
 		# If the admin deleted or commented some variables but then set
 		# them via debconf, (re-)add them to the config file.
 
-		grep -Eq "^${GIT_REPACK_REPOSITORIES_CRON} root" "${CRONFILE}" || \
-		echo "${GIT_REPACK_REPOSITORIES_CRON} root if [ -x /usr/bin/git-repack-repositories ]; then /usr/bin/git-repack-repositories --quiet; fi" >> "${CRONFILE}"
+		grep -Eq "^${GIT_REPACK_REPOSITORIES_CRON} root" "${_CRONFILE}" || \
+		echo "${GIT_REPACK_REPOSITORIES_CRON} root if [ -x /usr/bin/git-repack-repositories ]; then /usr/bin/git-repack-repositories --quiet; fi" >> "${_CRONFILE}"
 
 		sed -e "s|^ *root|${GIT_REPACK_REPOSITORIES_CRON} root|" \
-		< "${CRONFILE}" > "${CRONFILE}.tmp"
+		< "${_CRONFILE}" > "${_CRONFILE}.tmp"
 
-		mv -f "${CRONFILE}.tmp" "${CRONFILE}"
+		mv -f "${_CRONFILE}.tmp" "${_CRONFILE}"
 
 
 		## Bash Profile file handling
 
-		rm -f /etc/profile.d/git-stuff.sh
+		rm -f /etc/profile.d/git-stuff
 
 		case "${GIT_STUFF_BASH_PROFILE}" in
 			true)
-				ln -s /usr/share/git-stuff/git-stuff_profile.sh /etc/profile.d/git-stuff.sh
+				ln -s /usr/share/git-stuff/git-stuff_profile.sh /etc/profile.d/git-stuff
 				;;
 		esac
 		;;

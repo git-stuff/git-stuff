@@ -165,14 +165,14 @@ $ git checkout upstream</b></pre></li>
 	<pre><b>$ git-upstream-add <red><i>version</i></red></b></pre></li>
 
 	<li>Upstream tarball
-	<pre><b>$ git-upstream-tar <red>version</red>." ../<red><i>package</i></red>_<red><i>version</i></red>.orig.tar.gz</b></pre></li>
+	<pre><b>$ git-upstream-tar <red>version</red> ../<red><i>package</i></red>_<red><i>version</i></red>.orig.tar.gz</b></pre></li>
 
 	<li>Make sure that you are on the debian branch
 	<pre><b>$ git checkout debian</b></pre></li>
 
 	<li>Merging
 	<pre><b>$ git cherry-pick -n upstream
-$ git commit -a -m "Merging upstream version <red><i>version</i></red></b></pre></li>
+$ git commit -a -m "Merging upstream version <red><i>version</i></red></b>."</pre></li>
 
 	<li>Pushing
 	<pre><b>$ git-push</b></pre></li>

@@ -1,3 +1,24 @@
+git-stuff (10-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Updating todo file.
+  * Adding git-whoami to package description.
+  * Using full stop for utilities list in package long-description.
+  * Correcting spelling typo in package description.
+  * Making git-repack-repositories-cron silent if its disabled.
+  * Moving to a common git-stuff default and cron file in preparation
+    for additional jobs being added.
+  * Adding gitstats integration (FIXME).
+
+  [ Michael Dorrington ]
+  * Spelling correction of the word 'remember'.
+
+  [ Daniel Baumann ]
+  * Correcting spelling typo in workflow documentation, thanks to Thomas
+    Jampen <jampen@cryptography.ch>.
+
+ -- Daniel Baumann <daniel.baumann@progress-linux.org>  Fri, 09 Mar 2012 16:02:38 +0100
+
 git-stuff (9-1) unstable; urgency=low
 
   * Adding git-cherry-pick-recursive script.
