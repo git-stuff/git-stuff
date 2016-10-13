@@ -1,3 +1,10 @@
+git-stuff (4-1) unstable; urgency=low
+
+  * Correcting wrong email address in previous changelog entry.
+  * Unmarking debconf strings for translation (Closes: #637515).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sat, 13 Aug 2011 07:36:47 +0200
+
 git-stuff (3-1) unstable; urgency=low
 
   * Move --quiet invocation from git-repack-repositories-cron to the
@@ -5,7 +12,7 @@ git-stuff (3-1) unstable; urgency=low
     invoked.
   * Making git-repack-repositories-cron to be recursive by default.
 
- -- Daniel Baumann <daniel.baumann@progress-linux.org>  Tue, 09 Aug 2011 16:15:10 +0200
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 09 Aug 2011 16:15:10 +0200
 
 git-stuff (2-1) unstable; urgency=low
 
