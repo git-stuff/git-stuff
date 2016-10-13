@@ -64,7 +64,7 @@ cat > "${CRONFILE}" << EOF
 # /etc/cron.d/git-repack-repositories
 
 # By default this is run @monthly, see crontab(5) for more information.
-${GIT_REPACK_REPOSITORIES_CRON} root if [ -x /usr/bin/git-repack-repositories ]; then /usr/bin/git-repack-repositories --quiet; fi
+${GIT_REPACK_REPOSITORIES_CRON} root if [ -x /usr/bin/git-repack-repositories-cron ]; then /usr/bin/git-repack-repositories-cron --quiet; fi
 EOF
 
 		fi

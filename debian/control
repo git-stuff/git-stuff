@@ -11,4 +11,6 @@ Architecture: all
 Depends: ${misc:Depends}, git
 Recommends: cron, git-buildpackage, mr, pristine-tar
 Description: additional Git utilities
- This is a growing collection of tools for the Git Version Control System.
+ This is a growing collection of tools for the Git Version Control System:
+ .
+  * git-checkout-branches: checks out all remote branches

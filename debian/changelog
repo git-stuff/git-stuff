@@ -1,3 +1,22 @@
+git-stuff (5-1) unstable; urgency=low
+
+  * Correcting wrong license description in copyright.
+  * Adding manpage for git-checkout-branches.
+  * Completing German translation for git-stuff manpage.
+  * Adding git-checkout-branches to package long-description.
+  * Adding common functions file.
+  * Avoid subdirectory docs when installing documentation files into
+    /usr/share/doc/git-stuff.
+  * Adding check for git metadata in git-upstream-add script.
+  * Adding mode support for different distributions.
+  * Adding symlinks for progress.
+  * Silencing rmdir calls in makefile.
+  * Correcting script name that gets called in /etc/cron.d/git-repack-
+    repositories, thanks to Aaron M. Ucko <ucko@debian.org> (Closes:
+    #640016).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 01 Sep 2011 16:34:41 +0200
+
 git-stuff (4-1) unstable; urgency=low
 
   * Correcting wrong email address in previous changelog entry.
