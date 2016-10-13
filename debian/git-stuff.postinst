@@ -90,10 +90,11 @@ EOF
 		## Bash Profile file handling
 
 		rm -f /etc/profile.d/git-stuff
+		rm -f /etc/profile.d/git-stuff.sh
 
 		case "${GIT_STUFF_BASH_PROFILE}" in
 			true)
-				ln -s /usr/share/git-stuff/git-stuff_profile.sh /etc/profile.d/git-stuff
+				ln -s /usr/share/git-stuff/git-stuff_profile.sh /etc/profile.d/git-stuff.sh
 				;;
 		esac
 		;;

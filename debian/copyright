@@ -1,35 +1,38 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: git-stuff
+Upstream-Contact: git-stuff@packages.qa.debian.org
+Source: http://ftp.debian.org/debian/pool/main/g/git-stuff/
+
 Files: *
-Copyright: (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+Copyright: 2006-2012 Daniel Baumann <daniel.baumann@progress-technologies.net>
 License: GPL-3+
 
 Files: scripts/git-whoami
-Copyright: (C) 2011
+Copyright: 2011 Peter Eisentraut <peter@eisentraut.org>
 License: WTFL
 
 Files: scripts/git-hook-notification-bts
-Copyright: (C) 2009 Adeodato Simó <dato@net.com.org.es>
+Copyright: 2009 Adeodato Simó <dato@net.com.org.es>
 License: MIT
 
 Files: scripts/git-hook-notification-cia
-Copyright:
- (C) 2006 Fernando J. Pereda <ferdy@gentoo.org>
- (C) 2008 Natanael Copa <natanael.copa@gmail.com>
- (C) 2010 Eric S. Raymond <esr@thyrsus.com>
+Copyright: 2006 Fernando J. Pereda <ferdy@gentoo.org>
+           2008 Natanael Copa <natanael.copa@gmail.com>
+           2010 Eric S. Raymond <esr@thyrsus.com>
 License: GPL-2
 
 Files: scripts/git-hook-notification-cia.pl
-Copyright: (C) 2001-2005 Petr Baudis <pasky@ucw.cz>
+Copyright: 2001-2005 Petr Baudis <pasky@ucw.cz>
 License: GPL-2
 
 Files: scripts/git-hook-notification-email
-Copyright: (C) 2007 Andy Parkins
+Copyright: 2007 Andy Parkins
 License: GPL-2
 
 License: GPL-2
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; version 2
- of the License.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, version 2 of the License.
  .
  This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -37,8 +40,7 @@ License: GPL-2
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program; if not, write to the Free Software
- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
  .
  The complete text of the GNU General Public License
  can be found in /usr/share/common-licenses/GPL-2 file.

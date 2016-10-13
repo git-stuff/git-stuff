@@ -1,3 +1,17 @@
+git-stuff (11-1) unstable; urgency=low
+
+  * Updating to standards version 3.9.3.
+  * Updating to debhelper version 9.
+  * Updating copyright file machine-readable format version 1.0.
+  * Removing temporary commit message cruft in 9-1 changelog.
+  * Using .sh suffix for /etc/profile.d includes.
+  * Updating git-upstream-tar for xz compressed tarballs.
+  * Adding -F to git-repack in git-repack-repositories.
+  * Updating GPL boilerplate in copyright.
+  * Switching to xz compression.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sat, 30 Jun 2012 19:05:51 +0200
+
 git-stuff (10-1) unstable; urgency=low
 
   [ Daniel Baumann ]
@@ -8,7 +22,6 @@ git-stuff (10-1) unstable; urgency=low
   * Making git-repack-repositories-cron silent if its disabled.
   * Moving to a common git-stuff default and cron file in preparation
     for additional jobs being added.
-  * Adding gitstats integration (FIXME).
 
   [ Michael Dorrington ]
   * Spelling correction of the word 'remember'.
