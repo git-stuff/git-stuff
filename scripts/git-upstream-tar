@@ -1,0 +1,36 @@
+#!/bin/sh
+
+## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+TAR="${1}"
+
+if [ -z "${TAR}" ]; then
+	echo "Usage: $0 upstream.tar.gz"
+	exit 1
+fi
+
+if [ -n "${2}" ]
+then
+	VERSION="${2}"
+else
+	VERSION="$(basename ${TAR} | awk -F_ '{ print $2 }' | sed -e 's|.orig.tar.gz||' -e 's|.tar.gz||' -e 's|.orig.tar.bz2||' -e 's|.tar.bz2||' -e 's|.orig.tar.lz||' -e 's|.tar.lz||')"
+fi
+
+if [ -z "${VERSION}" ]; then
+	echo "Usage $0 upstream.tar.gz VERSION"
+	exit 1
+fi
+
+if ! git branch | grep -qs upstream
+then
+	git branch -m master upstream
+fi
+
+pristine-tar commit -m "Adding pristine-tar version ${VERSION}." ${TAR}

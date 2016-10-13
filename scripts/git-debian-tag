@@ -1,0 +1,17 @@
+#!/bin/sh
+
+## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+_VERSION="${1}"
+_HASH="${2}"
+
+_TAG="$(echo ${_VERSION} | sed -e 's|~|_|g')"
+
+git tag -a -f -m "Tagging debian version ${_VERSION}." debian/${_TAG} ${_HASH}

@@ -1,0 +1,75 @@
+#!/bin/sh
+
+## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+# Checking arguments
+case "${1}" in
+	-h|--help)
+		echo "git-debian-changelog - wrapper over git-dch(1)"
+		echo
+		echo "Usage: ${0} [COMMIT]"
+
+		exit 0
+		;;
+esac
+
+# Checking depends
+if [ ! -x "$(which git 2>/dev/null)" ]
+then
+	echo "E: git - No such file."
+	exit 1
+fi
+
+if [ ! -x "$(which git-dch 2>/dev/null)" ]
+then
+	echo "E: git-dch - No such file."
+	exit 1
+fi
+
+if [ ! -f debian/changelog ]
+then
+	echo "E: debian/changelog - No such file."
+	exit 1
+fi
+
+COMMIT="${1}"
+
+if [ -z "${COMMIT}" ]
+then
+	# Try to automatically get a commit id from last release commits
+	if [ -n "$(git log | grep -m1 'Adding version ')" ]
+	then
+		COMMIT="$(git log | grep -B4 -m1 "Adding version " | awk '/^commit / { print $2 }')"
+	fi
+
+	if [ -z "${COMMIT}" ] && [ -n "$(git log | grep -m1 'Releasing version ')" ]
+	then
+		COMMIT="$(git log | grep -B4 -m1 "Releasing version " | awk '/^commit / { print $2 }')"
+	fi
+
+	if [ -z "${COMMIT}" ] && [ -n "$(git log | grep -m1 'Adding debian version ')" ]
+	then
+		COMMIT="$(git log | grep -B4 -m1 "Adding debian version " | awk '/^commit / { print $2 }')"
+	fi
+
+	if [ -z "${COMMIT}" ] && [ -n "$(git log | grep -m1 'Releasing debian version ')" ]
+	then
+		COMMIT="$(git log | grep -B4 -m1 "Releasing debian version " | awk '/^commit / { print $2 }')"
+	fi
+else
+	shift
+fi
+
+if [ -n "${COMMIT}" ]
+then
+	git-dch --debian-branch $(git branch | awk '/^\* / { print $2 }') --git-author --release --since ${COMMIT} ${@}
+else
+	git-dch --auto --debian-branch $(git branch | awk '/^\* / { print $2 }') --git-author --release ${@}
+fi

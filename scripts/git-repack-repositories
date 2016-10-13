@@ -1,0 +1,38 @@
+#!/bin/sh
+
+## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+REPOSITORIES="${@}"
+
+if [ -z "${REPOSITORIES}" ]
+then
+	if [ ! -e HEAD ]
+	then
+		REPOSITORIES="*.git"
+	else
+		REPOSITORIES="$(pwd)"
+	fi
+fi
+
+for REPOSITORY in ${REPOSITORIES}
+do
+	echo "--------------------------------------------------------------------------------"
+	echo ${REPOSITORY}
+	echo "--------------------------------------------------------------------------------"
+
+	cd ${REPOSITORY}
+	git repack -a -d && git gc --aggressive --prune
+	cd ..
+
+	if [ "$(id -u)" -eq "0" ] && getent passwd | grep -q gitosis
+	then
+		chown gitosis:gitosis ${REPOSITORY} -R
+	fi
+done

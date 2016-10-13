@@ -1,0 +1,31 @@
+#!/bin/sh
+
+## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+VERSION="${1}"
+COMMIT="${2}"
+
+if [ -z "${VERSION}" ]; then
+	echo "Usage: $0 VERSION"
+	exit 1
+fi
+
+TAG="$(echo ${VERSION} | sed -e 's|~|_|g')"
+
+if [ ! -d .git ]
+then
+	rm -rf .git*
+	git init --shared
+fi
+
+git add .
+
+git commit -a -m "Adding upstream version ${VERSION}."
+git-upstream-tag ${TAG} ${COMMIT}

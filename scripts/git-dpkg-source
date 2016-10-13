@@ -1,0 +1,235 @@
+#!/bin/sh
+
+## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+# FIXME: handle backports specific changelog entry.
+
+# Assumptions:
+#
+# * the repository is using pristine-tar for non-native packages.
+# * release commits, if any, are of the form 'Releasing debian version ...'.
+# * import commits, if any, are of the form 'Adding debian version ...'.
+# * the repository has at least either of a release or an import commit on the
+#   target branch.
+# * and finally, the target branch is including upstream sources, not just
+#   debianization. but that should be clear anyway.
+
+
+# Check depends
+for FILE in git git-dch dpkg-parsechangelog pristine-tar
+do
+	if [ ! -x "$(which ${FILE} 2>/dev/null)" ]
+	then
+		echo "${FILE} missing, aborting."
+		exit 1
+	fi
+done
+
+# Arguments
+if [ -z "${1}" ]
+then
+	echo "Usage: ${0} REPOSITORY [DISTRIBUTION] [BRANCH]"
+	exit 1
+fi
+
+REPOSITORY="${1}"
+DISTRIBUTION="${2:-UNRELEASED}"
+BRANCH="${3}"
+
+# Dynamic variables
+PACKAGE="$(basename ${REPOSITORY} .git)"
+
+# Static variables
+TEMPDIR="$(mktemp -d -t git-dpkg-source.XXXXXXXX)"
+CURDIR="${PWD}"
+
+################################################################################
+
+# Creating build directory
+mkdir -p "${TEMPDIR}"
+
+# Cloning sources
+cd "${TEMPDIR}"
+git clone ${REPOSITORY}
+
+# Checking out branch
+cd "${TEMPDIR}"/${PACKAGE}
+
+if [ -n "${BRANCH}" ] && [ ! "$(git branch | awk '/^\* / { print $2 }')" = "${BRANCH}" ] &&
+   [ -n "$(git branch -r | grep ${BRANCH}$ )" ]
+then
+	# user specified a branch because he wants to build what is not
+	# the default branch of his repository, also:
+	# we are not on that target branch, but the target branch exists,
+	# so we check it out and switch to it.
+	git checkout -b ${BRANCH} origin/${BRANCH} || true
+fi
+
+# Assemble version information
+VERSION="$(dpkg-parsechangelog | awk '/Version:/ { print $2 }' | sed -e 's|.*:||')"
+UPSTREAM_VERSION="$(echo ${VERSION} | sed -e 's|-.*||')"
+
+if echo $(dpkg-parsechangelog | awk '/Version:/ { print $2 }')| grep -q ":"
+then
+	EPOCHE="$(dpkg-parsechangelog | awk '/Version:/ { print $2 }' | awk -F: '{ print $1 }'):"
+else
+	EPOCHE=""
+fi
+
+# let's see if we have a newer upstream version checked in
+if git branch -r | grep -q pristine-tar
+then
+	TAR_VERSION="$(git show origin/pristine-tar | awk -F_ '/^\+\+\+(.*)tar.gz.id$/ { print $2 }' | sed -e 's|.orig.tar.gz.id||' -e 's|.tar.gz.id||')"
+fi
+
+DELIMETER=""
+
+if [ -n "${TAR_VERSION}" ] && [ "${UPSTREAM_VERSION}" != "${TAR_VERSION}" ]
+then
+	# there has been newer upstream version merged
+	# (means: head has newer upstream than last release commit)
+	VERSION="${TAR_VERSION}-"
+	UPSTREAM_VERSION="${TAR_VERSION}"
+	DELIMETER="~"
+else
+	VERSION="${VERSION}"
+fi
+
+# let's see if the last commit was a release or import commit.
+# FIXME: it's more generic to compare if the last commit matches any available tag.
+if [ -z "$(git log | grep -m1 Date -A2 | grep "Releasing debian version ")" ] && \
+   [ -z "$(git log | grep -m1 Date -A2 | grep "Adding debian version ")" ] && \
+   [ -z "$(git log | grep -m1 Date -A2 | grep "Releasing version ")"] && \
+   [ -z "$(git log | grep -m1 Date -A2 | grep "Adding version ")" ]
+then
+	# we are building a snapshot
+	if [ -z "${DELIMETER}" ]
+	then
+		DELIMETER="+"
+	fi
+
+	# building version string from date of last commit
+	REVISION="$(git log | grep -m1 Date | awk -FDate: '{ print $2 }' | awk '{ print $1 ",", $3, $2, $5, $4, $6 }')"
+	REVISION="${DELIMETER}$(date -d "${REVISION}" +%Y%m%d.%H%M%S)"
+else
+	# we are building a release
+	REVISION=""
+fi
+
+HASH="$(cd "${TEMPDIR}"/${PACKAGE} && git log | grep -m1 commit | awk '{ print $2 }')"
+
+# Renaming package directory (in case we are building native,
+# it would matter for cosemtics; if non-native it's ignored anyway)
+mv "${TEMPDIR}"/${PACKAGE} "${TEMPDIR}"/${PACKAGE}-${VERSION}${REVISION}
+
+# Creating changelog
+cd "${TEMPDIR}"/${PACKAGE}-${VERSION}${REVISION}
+
+if [ -z "${DEBFULLNAME}" ]
+then
+	if [ -n "$(git config --get user.name)" ]
+	then
+		# take name from git config
+		DEBFULLNAME="$(git config --get user.name)"
+	else
+		# or from last commit in the repository
+		DEBFULLNAME="$(git log | grep -m1 "^Author: " | sed -e 's|^Author: ||' -e 's| <.*>$||')"
+	fi
+fi
+
+if [ -z "${DEBEMAIL}" ]
+then
+	if [ -n "$(git config --get user.email)" ]
+	then
+		# take email from git config
+		DEBEMAIL="$(git config --get user.email)"
+	else
+		# or from last commit in the repository
+		DEBEMAIL="$(git log | grep -m1 "^Author: " | sed -e 's|^.*<||' -e 's|>$||')"
+	fi
+fi
+
+export DEBFULLNAME DEBEMAIL
+
+if [ -n "${REVISION}" ]
+then
+	# we are building a snapshot, let's get the hash of the last release
+	OLD_HASH="$(git log | grep -B4 -m1 'Releasing debian version ' | awk '/commit / { print $2 }')"
+	if [ -z "${OLD_HASH}" ]
+	then
+		# if there wasn't a release commit, maybe just have an import commit.
+		OLD_HASH="$(git log | grep -B4 -m1 'Adding debian version ' | awk '/commit / { print $2 }')"
+	fi
+
+	# Add git commit messages since the last release/import.
+	echo "Running git-dch..."
+	git-dch --debian-branch $(git branch | awk '/^\* / { print $2 }') --since ${OLD_HASH} --new-version ${EPOCHE}${VERSION}${REVISION}
+
+	# Create changelog top note.
+	HEADER="$(head -1 debian/changelog)"
+	sed -i -e '1 d' debian/changelog
+
+	mv debian/changelog debian/changelog.tmp
+
+#case "${DISTRIBUTION}" in
+#	lenny-backports)
+#
+#cat > debian/changelog << EOF
+#${HEADER}
+#
+#  * Rebuilding for Debian GNU/Linux 5.0 "lenny".
+#EOF
+#
+#		;;
+#
+#	sid-snapshots)
+#
+cat > debian/changelog << EOF
+${HEADER}
+
+  * Unreleased snapshot from Git repository:
+    ${HASH}
+EOF
+
+#		;;
+#esac
+
+	cat debian/changelog.tmp >> debian/changelog
+	rm -f debian/changelog.tmp
+
+	dch --distribution ${DISTRIBUTION} --force-distribution --release ""
+#	--append "Unreleased snapshot from Git repository: ${HASH}"
+else
+	# we are building a release
+
+	case "${DISTRIBUTION}" in
+		sid-snapshots)
+			dch --force-distribution --force-bad-version --newversion ${EPOCHE}${VERSION}${REVISION} --distribution ${DISTRIBUTION} "Rebuild release from Git repository: ${HASH}"
+			;;
+	esac
+fi
+
+# Getting orig.tar.gz
+if [ -n "${TAR_VERSION}" ]
+then
+	# we have a non-native package
+	pristine-tar checkout ${PACKAGE}_${UPSTREAM_VERSION}.orig.tar.gz
+	mv ${PACKAGE}_${UPSTREAM_VERSION}.orig.tar.gz ../
+fi
+
+# Building package
+cd "${TEMPDIR}"/
+rm -rf ${PACKAGE}-${VERSION}${REVISION}/.git
+dpkg-source -b ${PACKAGE}-${VERSION}${REVISION}
+
+# Removing sources
+rm -rf ${PACKAGE}-${VERSION}${REVISION}
+mv * ${CURDIR}
+rm -rf "${TEMPDIR}"
