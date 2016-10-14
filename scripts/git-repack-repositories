@@ -39,6 +39,7 @@ do
 
 	cd ${_REPOSITORY}
 	git repack ${_GIT_REPACK_OPTIONS} -a -d -F && git gc ${_GIT_GC_OPTIONS} --aggressive --prune
+	git update-server-info
 	cd ..
 
 	if [ "$(id -u)" -eq "0" ]

@@ -6,8 +6,8 @@ Uploaders: Andrew Lee (李健秋) <ajqlee@debian.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.4
 Homepage: http://daniel-baumann.ch/software/git-stuff/
-Vcs-Browser: http://daniel-baumann.ch/gitweb/?p=debian/git-stuff.git
-Vcs-Git: git://daniel-baumann.ch/git/debian/git-stuff.git
+Vcs-Browser: http://daniel-baumann.ch/gitweb/?p=debian/packages/git-stuff.git
+Vcs-Git: git://daniel-baumann.ch/git/debian/packages/git-stuff.git
 
 Package: git-stuff
 Architecture: all

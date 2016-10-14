@@ -1,3 +1,11 @@
+git-stuff (19-1) experimental; urgency=low
+
+  * Updating vcs fields.
+  * Adding todo file.
+  * Also calling git update-server-info in git-repack-repositories.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Thu, 17 Oct 2013 09:56:33 +0200
+
 git-stuff (18-2) experimental; urgency=low
 
   * Adding vcs fields.
