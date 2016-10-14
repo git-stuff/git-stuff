@@ -1,3 +1,11 @@
+git-stuff (18-2) experimental; urgency=low
+
+  * Adding vcs fields.
+  * Wrapping control fields.
+  * Adding lintian overrides.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 17 Jul 2013 13:14:15 +0200
+
 git-stuff (18-1) experimental; urgency=low
 
   * Shortening links to upstream homepage.

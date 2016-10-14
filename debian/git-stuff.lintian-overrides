@@ -1,0 +1,1 @@
+git-stuff: command-with-path-in-maintainer-script postinst:82 /usr/bin/git-repack-repositories
