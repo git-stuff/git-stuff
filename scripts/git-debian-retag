@@ -9,6 +9,8 @@
 
 set -e
 
+_MODE="$(basename ${0} | sed -e 's|^git-||' -e 's|-[a-z]$||')"
+
 Tag ()
 {
 	_TAG="${1}"
