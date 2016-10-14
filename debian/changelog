@@ -1,3 +1,11 @@
+git-stuff (21-1) unstable; urgency=low
+
+  * Adding --show-signature to appropriate git shortcuts.
+  * Creating signed commits and tags by default.
+  * Updating year in copyright notices.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 23 Jul 2014 14:39:42 +0200
+
 git-stuff (20-2) unstable; urgency=low
 
   * Updating year in copyright file.
