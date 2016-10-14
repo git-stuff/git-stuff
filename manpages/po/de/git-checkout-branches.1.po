@@ -1,11 +1,11 @@
 # German translations for git-stuff package
-# 2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+# 2006-2012 Daniel Baumann <daniel.baumann@progress-technologies.net>
 # This file is distributed under the same license as the git-stuff package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: git-stuff 9\n"
-"POT-Creation-Date: 2012-03-09 16:02+0100\n"
+"POT-Creation-Date: 2012-11-08 13:21+0100\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel.baumann@progress-technologies.net>\n"
 "Language-Team: none\n"
@@ -28,7 +28,7 @@ msgstr "GIT-STUFF"
 #: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
 #: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "2012-03-09"
+msgid "2012-11-08"
 msgstr ""
 
 #. type: TH
@@ -36,7 +36,7 @@ msgstr ""
 #: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
 #: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "10"
+msgid "13"
 msgstr ""
 
 #. type: TH

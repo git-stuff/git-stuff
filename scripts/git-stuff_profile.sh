@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# On Debian based systems, inclusion and exclusion of this file can be
+# triggered with 'dpkg-reconfigure -plow git-stuff'.
+
 alias a="git-amend-all"
 alias c="git commit -a"
 alias ch="git cherry-pick"

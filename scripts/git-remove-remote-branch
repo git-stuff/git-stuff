@@ -9,14 +9,7 @@
 
 set -e
 
-Tag ()
-{
-	TAG="${1}"
-	COMMIT="$(git log | grep -B4 ${TAG} | awk '/^commit / { print $2 }')"
-	git-upstream-tag ${TAG} ${COMMIT}
-}
-
-for TAG in $(git tag | grep ^upstream)
+for _BRANCH in ${@}
 do
-	Tag $(echo ${TAG} | awk -F/ '{ print $2 }')
+	git push origin :${_BRANCH}
 done
