@@ -36,4 +36,10 @@ fi
 git add .
 
 git commit -a -m "Adding upstream version ${VERSION}."
+
 git-upstream-tag ${TAG} ${COMMIT}
+
+if ! git branch | grep -qs upstream
+then
+	git branch -m master upstream
+fi

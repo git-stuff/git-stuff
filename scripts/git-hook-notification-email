@@ -648,13 +648,13 @@ then
 	projectdesc="UNNAMED PROJECT"
 fi
 
-recipients=$(git repo-config hooks.mailinglist)
-bcc_recipients=$(git repo-config hooks.bcc)
-reply_to=$(git repo-config hooks.replyto)
-announcerecipients=$(git repo-config hooks.announcelist)
-envelopesender=$(git repo-config hooks.envelopesender)
+recipients=$(git config hooks.mailinglist)
+bcc_recipients=$(git config hooks.bcc)
+reply_to=$(git config hooks.replyto)
+announcerecipients=$(git config hooks.announcelist)
+envelopesender=$(git config hooks.envelopesender)
 sendmail="/usr/sbin/sendmail -t"
-subjectdesc=$(git repo-config hooks.subjectdesc)
+subjectdesc=$(git config hooks.subjectdesc)
 
 if [ -z "$subjectdesc" ]; then
 	subjectdesc=$projectdesc
@@ -670,7 +670,7 @@ if [ -n "$1" -a -n "$2" -a -n "$3" ]; then
 	PAGER= generate_email $2 $3 $1
 else
 	if [ -n "$envelopesender" ]; then
-		sendmail="$sendmail -f '$envelopesender'"
+		sendmail="$sendmail -f $envelopesender"
 	fi
 
 	while read oldrev newrev refname

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: git-stuff VERSION\n"
-"POT-Creation-Date: 2013-03-10 20:44+0100\n"
+"POT-Creation-Date: 2013-04-04 07:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 #: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
 #: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "2013-03-10"
+msgid "2013-04-04"
 msgstr ""
 
 #. type: TH
@@ -37,7 +37,7 @@ msgstr ""
 #: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
 #: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "16"
+msgid "17-1"
 msgstr ""
 
 #. type: TH

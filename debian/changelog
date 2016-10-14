@@ -1,3 +1,22 @@
+git-stuff (17-1) experimental; urgency=low
+
+  * Adding git-extras to suggests.
+  * Also reading in /etc/default/git-stuff.d and .git-stuff.d as conffile
+    directories.
+  * Adding trivial hook to call git-hook-update-server-info.
+  * Updating todo file.
+  * Removing double quotes in git-hook-notification-email to prevent exim
+    from refusing the address, thanks to Rafael Laboissiere
+    <rafael@laboissiere.net> (Closes: #701631).
+  * Updating git-hook-notification-email and git-hook-notification-bts to
+    use git config instead of obsolete git repo-config, thanks to Rafael
+    Laboissiere <rafael@laboissiere.net> (Closes: #702451).
+  * Updating manpages makefile for additional languages.
+  * Adding homepage field in control.
+  * Updating meta information in copyright file.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Thu, 04 Apr 2013 07:38:04 +0200
+
 git-stuff (16-1) unstable; urgency=low
 
   * Removing all references to my old email address.
