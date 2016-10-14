@@ -4,7 +4,7 @@ Upstream-Contact: git-stuff@packages.qa.debian.org
 Source: http://ftp.debian.org/debian/pool/main/g/git-stuff/
 
 Files: *
-Copyright: 2006-2013 Daniel Baumann <daniel.baumann@progress-technologies.net>
+Copyright: 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 License: GPL-3+
 
 Files: scripts/git-whoami

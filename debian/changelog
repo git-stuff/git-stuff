@@ -1,3 +1,9 @@
+git-stuff (16-1) unstable; urgency=low
+
+  * Removing all references to my old email address.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 10 Mar 2013 20:40:29 +0100
+
 git-stuff (15-1) unstable; urgency=low
 
   * Adjusting mode detection again to be actually working now.
@@ -10,7 +16,7 @@ git-stuff (15-1) unstable; urgency=low
   * Updating version script for manpages to automatically translate date
     strings.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 17 Feb 2013 09:38:14 +0100
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 17 Feb 2013 09:38:14 +0100
 
 git-stuff (14-1) unstable; urgency=low
 
@@ -19,7 +25,7 @@ git-stuff (14-1) unstable; urgency=low
     <taffit@debian.org (Closes: #693149).
   * Correcting mode detection for deriviative scripts.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 13 Nov 2012 18:43:20 +0100
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 13 Nov 2012 18:43:20 +0100
 
 git-stuff (13-1) unstable; urgency=low
 
@@ -49,7 +55,7 @@ git-stuff (13-1) unstable; urgency=low
   * Applying patch from Tom Jampen <tom@cryptography.ch> for git-debian-
     changelog to conditionally use git-dch wrap script if available.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 08 Nov 2012 13:22:18 +0100
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Thu, 08 Nov 2012 13:22:18 +0100
 
 git-stuff (12-1) unstable; urgency=low
 
@@ -75,7 +81,7 @@ git-stuff (12-1) unstable; urgency=low
     <brother@bsnet.se> (Closes: #688417).
   * Avoid superfluous asking twice of debconf questions.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Fri, 28 Sep 2012 16:57:27 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Fri, 28 Sep 2012 16:57:27 +0200
 
 git-stuff (11-1) unstable; urgency=low
 
@@ -89,7 +95,7 @@ git-stuff (11-1) unstable; urgency=low
   * Updating GPL boilerplate in copyright.
   * Switching to xz compression.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sat, 30 Jun 2012 19:05:51 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sat, 30 Jun 2012 19:05:51 +0200
 
 git-stuff (10-1) unstable; urgency=low
 
@@ -126,7 +132,7 @@ git-stuff (9-1) unstable; urgency=low
   * Adding manpage for git-whoami.
   * Correcting some consistency errors in manpages.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Wed, 23 Nov 2011 23:05:58 +0100
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 23 Nov 2011 23:05:58 +0100
 
 git-stuff (8-1) unstable; urgency=low
 
@@ -143,7 +149,7 @@ git-stuff (8-1) unstable; urgency=low
   * Adding old packaging recommendations to docs, need to be updated and
     transformed in a full guide later.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sat, 08 Oct 2011 13:15:44 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sat, 08 Oct 2011 13:15:44 +0200
 
 git-stuff (7-1) unstable; urgency=low
 
@@ -151,7 +157,7 @@ git-stuff (7-1) unstable; urgency=low
   * Updating bash shortcuts example file for git cherry-pick.
   * Documenting git-commit-lazy.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 06 Sep 2011 13:05:44 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 06 Sep 2011 13:05:44 +0200
 
 git-stuff (6-1) unstable; urgency=low
 
@@ -161,7 +167,7 @@ git-stuff (6-1) unstable; urgency=low
   * Adding documentation for git-amend-all.
   * Improving git-checkout-branches long-description.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Mon, 05 Sep 2011 13:37:44 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 05 Sep 2011 13:37:44 +0200
 
 git-stuff (5-1) unstable; urgency=low
 
@@ -180,14 +186,14 @@ git-stuff (5-1) unstable; urgency=low
     repositories, thanks to Aaron M. Ucko <ucko@debian.org> (Closes:
     #640016).
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 01 Sep 2011 16:34:41 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Thu, 01 Sep 2011 16:34:41 +0200
 
 git-stuff (4-1) unstable; urgency=low
 
   * Correcting wrong email address in previous changelog entry.
   * Unmarking debconf strings for translation (Closes: #637515).
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sat, 13 Aug 2011 07:36:47 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sat, 13 Aug 2011 07:36:47 +0200
 
 git-stuff (3-1) unstable; urgency=low
 
@@ -196,7 +202,7 @@ git-stuff (3-1) unstable; urgency=low
     invoked.
   * Making git-repack-repositories-cron to be recursive by default.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 09 Aug 2011 16:15:10 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 09 Aug 2011 16:15:10 +0200
 
 git-stuff (2-1) unstable; urgency=low
 
@@ -227,10 +233,10 @@ git-stuff (2-1) unstable; urgency=low
   * Excluding git-hooks-notifications-bts from bashism check (it's
     bash).
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 09 Aug 2011 14:22:34 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 09 Aug 2011 14:22:34 +0200
 
 git-stuff (1-1) unstable; urgency=low
 
   * Initial release.
 
- -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 26 Jul 2011 20:51:05 +0200
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 26 Jul 2011 20:51:05 +0200
