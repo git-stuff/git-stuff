@@ -1,3 +1,22 @@
+git-stuff (22-2) unstable; urgency=medium
+
+  * Introduced myself as Maintainer, Daniel abandoned the package.
+  * Rebuilt the code history from snapshots.debian.org
+  * Set compat to 10
+  * Bumped minimum version of debhelpers to 10
+  * Removed --parallel from rules, standard in compat 10
+  * Removed source/option, xz is standard
+  * Removed compression override from rules
+  * Pointed VCS-Fields and Hompage to Github
+  * Added myself to debian/copyrights
+  * Fixed insecure copyrights-format link
+  * Removed Daniel as Upstream-Contact
+  * Removed Uploaders - there are no plans to reintroduce the package
+    into debian right now
+  * Added debian/.gitignore
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 14 Oct 2016 03:14:35 +0200
+
 git-stuff (22-1) unstable; urgency=low
 
   * Dropping -S from git tag calls.

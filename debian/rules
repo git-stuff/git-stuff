@@ -1,13 +1,10 @@
 #!/usr/bin/make -f
 
 %:
-	dh ${@} --parallel
+	dh ${@}
 
 override_dh_auto_install:
 	dh_auto_install
 
 	# removing unused files
 	rm -f debian/git-stuff/usr/share/doc/git-stuff/COPYING
-
-override_dh_builddeb:
-	dh_builddeb -- -Zxz

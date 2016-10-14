@@ -1,10 +1,14 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: git-stuff
-Upstream-Contact: Daniel Baumann <mail@daniel-baumann.ch>
-Source: http://daniel-baumann.ch/files/software/git-stuff/
+Source: https://github.com/git-stuff/git-stuff
 
 Files: *
 Copyright: 2006-2014 Daniel Baumann <mail@daniel-baumann.ch>
+License: GPL-3+
+
+Files: debian/*
+Copyright: 2016      Alf Gaida <agaida@siduction.org>
+           2006-2014 Daniel Baumann <mail@daniel-baumann.ch>
 License: GPL-3+
 
 Files: gitdm/*
