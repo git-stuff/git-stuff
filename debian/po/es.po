@@ -1,5 +1,5 @@
-# Russian debconf translations for git-stuff
-# Copyright (C) 2012 Yuri Kozlov <yuray@komyakino.ru>
+# Spanish debconf translations for git-stuff
+# Copyright (C) 2012 Javier Fernández-Sanguino <jfs@debian.org>
 # This file is distributed under the same license as the git-stuff package.
 #
 msgid ""
@@ -7,27 +7,25 @@ msgstr ""
 "Project-Id-Version: git-stuff 12-1\n"
 "Report-Msgid-Bugs-To: git-stuff@packages.debian.org\n"
 "POT-Creation-Date: 2012-09-28 16:27+0200\n"
-"PO-Revision-Date: 2012-11-05 09:40+0400\n"
-"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
-"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
-"Language: ru\n"
+"PO-Revision-Date: 2012-09-27 03:28+0200\n"
+"Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
+"Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Type: title
 #. Description
 #: ../git-stuff.templates:1001
 msgid "Git repack repositories"
-msgstr "Перепаковка репозиториев git"
+msgstr "Repositorios de re-empaquetado de Git"
 
 #. Type: boolean
 #. Description
 #: ../git-stuff.templates:2001
 msgid "Enable cron job?"
-msgstr "Включить задание cron?"
+msgstr "¿Desea activar la tarea periódica?"
 
 #. Type: boolean
 #. Description
@@ -37,22 +35,21 @@ msgid ""
 "maintain optimal performance they should be repacked from time to time "
 "(reducing the number of files in the objects subdirectory)."
 msgstr ""
-"Репозитории git очень быстро увеличиваются в объёме. Для экономии места и "
-"поддержки оптимальной производительности, их нужно периодически "
-"перепаковывать (при этом сокращается количество файлов в подкаталоге "
-"объектов)."
+"Los repositorios de GIT tienden a hacerse grandes rápidamente. Para ahorrar "
+"espacio y mantener un rendimiento óptimo deben re-empaquetarse de forma "
+"periódica (reduciendo el número de archivos en el subdirectorio de objetos)."
 
 #. Type: string
 #. Default
 #: ../git-stuff.templates:3001
 msgid "/srv/git"
-msgstr "/srv/git"
+msgstr ""
 
 #. Type: string
 #. Description
 #: ../git-stuff.templates:3002
 msgid "Git directories:"
-msgstr "Каталоги git:"
+msgstr "Directorios Git:"
 
 #. Type: string
 #. Description
@@ -62,27 +59,27 @@ msgid ""
 "for the Git repositories on the server. Note that git-repack-repositories "
 "will work recursively."
 msgstr ""
-"Укажите каталог или каталоги (через пробел), используемые в качестве "
-"корневых для репозиториев git на сервере. Заметим, что git-repack-"
-"repositories работает рекурсивно."
+"Especifique el directorio o directorios (separados por espacio) que se "
+"utilizan como raíz de los repositorios de Git en el servidor. Tenga en "
+"cuenta que «git-repack-repositories» opera de forma recursiva."
 
 #. Type: string
 #. Default
 #: ../git-stuff.templates:4001
 msgid "@monthly"
-msgstr "@monthly"
+msgstr ""
 
 #. Type: string
 #. Description
 #: ../git-stuff.templates:4002
 msgid "Git cron job scheduling:"
-msgstr "Расписание запуска задания cron для git:"
+msgstr "Planificación de la tarea de cron de Git:"
 
 #. Type: string
 #. Description
 #: ../git-stuff.templates:4002
 msgid "Please choose when the cron job should be started."
-msgstr "Выберите, когда нужно запускать задание cron."
+msgstr "Escoja cuando debería arrancarse la tarea de cron."
 
 #. Type: string
 #. Description
@@ -92,21 +89,21 @@ msgid ""
 "value \"@monthly\" (without the quotes) will be used, executing the cron job "
 "every month."
 msgstr ""
-"Описание формата можно найти в crontab(5). Если ничего не вводить, то по "
-"умолчанию используется значение «@monthly» (без кавычек), при котором "
-"задание cron запускается ежемесячно."
+"Para ver la definición de formatos consulte la página de manual crontab(5). "
+"Si deja este valor vacío, se utilizará el valor por omisión «@monthly» (sin "
+"las comillas), de forma que la tarea se ejecute cada mes."
 
 #. Type: title
 #. Description
 #: ../git-stuff.templates:5001
 msgid "Additional Git utilities"
-msgstr "Дополнительные утилиты git"
+msgstr "Utilidades adicionales de Git"
 
 #. Type: boolean
 #. Description
 #: ../git-stuff.templates:6001
 msgid "Should shortcut definitions be activated?"
-msgstr "Активировать специальные сокращения для команд?"
+msgstr "¿Deberían activarse las definiciones de atajos?"
 
 #. Type: boolean
 #. Description
@@ -114,4 +111,4 @@ msgstr "Активировать специальные сокращения д�
 msgid ""
 "Special shortcut definitions for Bash can be activated in /etc/profile.d."
 msgstr ""
-"Для bash в /etc/profile.d можно включить специальные сокращения команд."
+"Pueden activarse algunas definiciones speciales para Bash en «/etc/profile.d»"

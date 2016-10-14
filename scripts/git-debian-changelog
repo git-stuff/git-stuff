@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## Copyright (C) 2006-2011 Daniel Baumann <daniel.baumann@progress-technologies.net>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel.baumann@progress-technologies.net>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -41,6 +41,14 @@ then
 	exit 1
 fi
 
+# Check for git-dch wrap script
+_WRAP_SCRIPT="/usr/share/doc/git-buildpackage/examples/wrap_cl.py"
+
+if [ -e "/usr/share/doc/git-buildpackage/examples/wrap_cl.py" ]
+then
+	_CUSTOMIZATION="--customization ${_WRAP_SCRIPT}"
+fi
+
 COMMIT="${1}"
 
 if [ -z "${COMMIT}" ]
@@ -71,7 +79,7 @@ fi
 
 if [ -n "${COMMIT}" ]
 then
-	git-dch --debian-branch $(git branch | awk '/^\* / { print $2 }') --git-author --release --since ${COMMIT} ${@}
+	git-dch --debian-branch $(git branch | awk '/^\* / { print $2 }') --git-author --release --since ${COMMIT} ${_CUSTOMIZATION} ${@}
 else
-	git-dch --auto --debian-branch $(git branch | awk '/^\* / { print $2 }') --git-author --release ${@}
+	git-dch --auto --debian-branch $(git branch | awk '/^\* / { print $2 }') --git-author --release ${_CUSTOMIZATION} ${@}
 fi

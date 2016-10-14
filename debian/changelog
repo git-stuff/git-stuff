@@ -1,3 +1,33 @@
+git-stuff (13-1) unstable; urgency=low
+
+  * Adding suggests to irker.
+  * Adjusting symlinks for progress-linux tools.
+  * Updating to standards version 3.9.4.
+  * Adding suggests to gitstats.
+  * Updating years in copyright notices.
+  * Referencing xz tarballs in git-upstream-tar usage message.
+  * Correcting references to multi tarballs in git-upstream-tar usage
+    message.
+  * Adding wrappers to remove branches and tags in origin.
+  * Adding comment in profile snippet to mention automatic inclusion and
+    exclusion through packaging (Closes: #690609).
+  * Updating outdated conffile location in git-repack-repositories-cron
+    (Closes: #670430).
+  * Adding updated Russian debconf translations from Yuri Kozlov
+    <yuray@komyakino.ru> (Closes: #692336).
+  * Adding initial Czech debconf translations from Michal Simunek
+    <michal.simunek@gmail.com> (Closes: #687701).
+  * Adding initial Spanish debconf translations from Javier Fernandez-
+    Sanguino <jfs@computer.org> (Closes: #688927).
+  * Adding initial French debconf translations from David Prévot
+    <david@tilapin.org> (Closes: #687725).
+  * Adding initial Italian debconf translations from Beatrice Torracca
+    <beatricet@libero.it> (Closes: #687772).
+  * Applying patch from Tom Jampen <tom@cryptography.ch> for git-debian-
+    changelog to conditionally use git-dch wrap script if available.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 08 Nov 2012 13:22:18 +0100
+
 git-stuff (12-1) unstable; urgency=low
 
   * Updating git-upstream-tarball for multiple upstream tarballs.

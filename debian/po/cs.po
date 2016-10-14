@@ -1,0 +1,114 @@
+# Czech debconf translations for git-stuff
+# Copyright (C) Michal Simunek <michal.simunek@gmail.com>
+# This file is distributed under the same license as the git-stuff package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: git-stuff 11-2\n"
+"Report-Msgid-Bugs-To: git-stuff@packages.debian.org\n"
+"POT-Creation-Date: 2012-09-28 16:27+0200\n"
+"PO-Revision-Date: 2012-09-15 11:02+0200\n"
+"Last-Translator: Michal Simunek <michal.simunek@gmail.com>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:1001
+msgid "Git repack repositories"
+msgstr "Přebalení Git repositářů"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid "Enable cron job?"
+msgstr "Povolit úlohu cronu?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:2001
+msgid ""
+"Git repositories tend to grow quite large quickly. To save space and "
+"maintain optimal performance they should be repacked from time to time "
+"(reducing the number of files in the objects subdirectory)."
+msgstr ""
+"Git repositáře mají tendenci se rychle zvětšovat. K ušetření místa a udržení "
+"optimálního výkonu by se měly čas od času přebalit (sníží se počet souborů v "
+"podadresáři s objekty)."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:3001
+msgid "/srv/git"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid "Git directories:"
+msgstr "Adresáře pro Git:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:3002
+msgid ""
+"Please specify the directory or directories (space separated) used as root "
+"for the Git repositories on the server. Note that git-repack-repositories "
+"will work recursively."
+msgstr ""
+"Zadejte prosím adresář či adresáře, (oddělené mezerou), které se na tomto "
+"serveru používají jako kořen pro Git repositáře. Berte na vědomí, že git-"
+"repack-repositories bude fungovat rekurzivně."
+
+#. Type: string
+#. Default
+#: ../git-stuff.templates:4001
+msgid "@monthly"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Git cron job scheduling:"
+msgstr "Naplánování úlohy cronu pro Git:"
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid "Please choose when the cron job should be started."
+msgstr "Zvolte si prosím, kdy se má úloha cronu spouštět."
+
+#. Type: string
+#. Description
+#: ../git-stuff.templates:4002
+msgid ""
+"See crontab(5) for the format definition. If it is left empty, the default "
+"value \"@monthly\" (without the quotes) will be used, executing the cron job "
+"every month."
+msgstr ""
+"Pro definici formátu se podívejte do crontab(5). Ponecháte-li políčko "
+"prázdné, použije se výchozí hodnota \"@monthly\" (bez uvozovek), což provede "
+"úlohu cronu každý měsíc."
+
+#. Type: title
+#. Description
+#: ../git-stuff.templates:5001
+msgid "Additional Git utilities"
+msgstr "Další nástroje pro Git"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid "Should shortcut definitions be activated?"
+msgstr "Mají se aktivovat zkratky definic?"
+
+#. Type: boolean
+#. Description
+#: ../git-stuff.templates:6001
+msgid ""
+"Special shortcut definitions for Bash can be activated in /etc/profile.d."
+msgstr ""
+"Pro Bash lze v souboru /etc/profile.d aktivovat speciální zkratky definic."

@@ -4,12 +4,13 @@ Priority: optional
 Maintainer: Daniel Baumann <daniel.baumann@progress-technologies.net>
 Uploaders: Andrew Lee (李健秋) <ajqlee@debian.org>
 Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 
 Package: git-stuff
 Architecture: all
 Depends: ${misc:Depends}, git
 Recommends: cron, git-buildpackage, mr, pristine-tar
+Suggests: gitstats, irker
 Description: additional Git utilities
  This is a growing collection of tools for the Git Version Control System.
  .
