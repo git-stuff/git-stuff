@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
+## Copyright (C) 2006-2014 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -18,23 +18,11 @@ else
 	_VERSION="$(dpkg-parsechangelog | awk '/^Version: / { print $2 }' | cut -d: -f 2-)"
 fi
 
-_TAG="$(echo ${_VERSION} | sed -e 's|~|_|g')"
-
 _HASH="${2}"
 
-if [ ! -d .git ]
-then
-	if ls .git* > /dev/null 2>&1
-	then
-		echo "W: '$(basename ${PWD})' - Not a Git repository but contains Git meta data."
-	fi
-
-	git init --shared
-fi
-
-git add .
+git add . -A
 
 chmod 0755 debian/rules
 
-git commit -a -m "Adding ${_MODE} version ${_VERSION}."
-git-${_MODE}-tag ${_TAG} ${_HASH}
+git commit -s -S -m "Adding ${_MODE} version ${_VERSION}."
+git-${_MODE}-tag ${_VERSION} ${_HASH}

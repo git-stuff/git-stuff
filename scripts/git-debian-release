@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
+## Copyright (C) 2006-2014 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -24,11 +24,9 @@ else
 	_VERSION="$(dpkg-parsechangelog | awk '/^Version: / { print $2 }' | cut -d: -f 2-)"
 fi
 
-_TAG="$(echo ${_VERSION} | sed -e 's|~|_|g')"
-
 _HASH="${2}"
 
 git add .
 
-git commit -a -m "Releasing ${_MODE} version ${_VERSION}."
-git-${_MODE}-tag ${_TAG} ${_HASH}
+git commit -s -S -m "Releasing ${_MODE} version ${_VERSION}."
+git-${_MODE}-tag ${_VERSION} ${_HASH}
