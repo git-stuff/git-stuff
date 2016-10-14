@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## Copyright (C) 2006-2012 Daniel Baumann <daniel.baumann@progress-technologies.net>
+## Copyright (C) 2006-2013 Daniel Baumann <daniel.baumann@progress-technologies.net>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -9,7 +9,7 @@
 
 set -e
 
-_MODE="$(basename ${0} | sed -e 's|^git-||' -e 's|-[a-z]$||')"
+_MODE="$(basename ${0} | sed -e 's|^git-||' -e 's|-tag$||')"
 
 _VERSION="${1}"
 _HASH="${2}"
