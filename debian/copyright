@@ -4,7 +4,7 @@ Upstream-Contact: Daniel Baumann <mail@daniel-baumann.ch>
 Source: http://daniel-baumann.ch/files/software/git-stuff/
 
 Files: *
-Copyright: 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
+Copyright: 2006-2014 Daniel Baumann <mail@daniel-baumann.ch>
 License: GPL-3+
 
 Files: gitdm/*

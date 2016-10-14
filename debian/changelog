@@ -1,3 +1,10 @@
+git-stuff (20-2) unstable; urgency=low
+
+  * Updating year in copyright file.
+  * Building with dh --parallel.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 31 Mar 2014 19:54:35 +0200
+
 git-stuff (20-1) experimental; urgency=low
 
   * Updating to standards version 3.9.5.
