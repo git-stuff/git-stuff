@@ -9,10 +9,13 @@
 
 set -e
 
-if [ -e /etc/default/git-stuff ]
-then
-	. /etc/default/git-stuff
-fi
+for _CONFFILE in /etc/default/git-stuff /etc/default/git-stuff.d/*
+do
+	if [ -e ${_CONFFILE} ]
+	then
+		. ${_CONFFILE} || true
+	fi
+done
 
 if [ "${GIT_REPACK_REPOSITORIES_ENABLE}" != "true" ]
 then

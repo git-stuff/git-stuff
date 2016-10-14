@@ -7,6 +7,10 @@ Files: *
 Copyright: 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 License: GPL-3+
 
+Files: gitdm/*
+Copyright: 2008-2013 Jonathan Corbet <corbet@lwn.net>
+License: GPL-2
+
 Files: scripts/git-whoami
 Copyright: 2011 Peter Eisentraut <peter@eisentraut.org>
 License: WTFL

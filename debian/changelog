@@ -1,3 +1,16 @@
+git-stuff (20-1) experimental; urgency=low
+
+  * Updating to standards version 3.9.5.
+  * Sourcing consistently all conf.d files for defaults.
+  * Adding gitolite suexec wrappers.
+  * Removing git-*-retag, not really working nor usefull anyway.
+  * Including gitdm 20130829 from git://git.lwn.net/gitdm.git.
+  * Updating debian/copyright for gitdm.
+  * Adding git-hook.d hook that can be symlinked into hooks/foo which then
+    executes hooks/foo.d/*.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 13 Jan 2014 13:27:47 +0100
+
 git-stuff (19-1) experimental; urgency=low
 
   * Updating vcs fields.
