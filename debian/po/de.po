@@ -1,6 +1,6 @@
 # German debconf translations for git-stuff
 # Copyright (C) 2012 Holger Wansing <linux@wansing-online.de>
-# Copyright (C) 2012 Daniel Baumann <daniel.baumann@progress-technologies.net>
+# Copyright (C) 2012-2013 Daniel Baumann <daniel.baumann@progress-technologies.net>
 # This file is distributed under the same license as the git-stuff package.
 #
 msgid ""

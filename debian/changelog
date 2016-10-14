@@ -1,3 +1,17 @@
+git-stuff (15-1) unstable; urgency=low
+
+  * Adjusting mode detection again to be actually working now.
+  * Adding dpkg-source local-options.
+  * Dropping dpkg-source compression levels.
+  * Updating copyright notices for 2013.
+  * Correcting cropping of orig.tar.xz tarballs when creating commit
+    message in git-upstream-tar, thanks to Mathias Behrle
+    <mathiasb@m9s.biz> (Closes: #700695).
+  * Updating version script for manpages to automatically translate date
+    strings.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 17 Feb 2013 09:38:14 +0100
+
 git-stuff (14-1) unstable; urgency=low
 
   * Marking accidentally translatable directories and cron debconf
