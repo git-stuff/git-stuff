@@ -1,3 +1,12 @@
+git-stuff (14-1) unstable; urgency=low
+
+  * Marking accidentally translatable directories and cron debconf
+    defaults as untranslatable again, thanks to David Prevot
+    <taffit@debian.org (Closes: #693149).
+  * Correcting mode detection for deriviative scripts.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 13 Nov 2012 18:43:20 +0100
+
 git-stuff (13-1) unstable; urgency=low
 
   * Adding suggests to irker.

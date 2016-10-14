@@ -12,7 +12,7 @@ _Description: Enable cron job?
 
 Template: git-repack-repositories/directories
 Type: string
-_Default: /srv/git
+Default: /srv/git
 _Description: Git directories:
  Please specify the directory or directories (space separated) used as root
  for the Git repositories on the server. Note that git-repack-repositories
@@ -20,7 +20,7 @@ _Description: Git directories:
 
 Template: git-repack-repositories/cron
 Type: string
-_Default: @monthly
+Default: @monthly
 _Description: Git cron job scheduling:
  Please choose when the cron job should be started.
  .

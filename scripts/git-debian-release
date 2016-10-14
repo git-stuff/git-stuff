@@ -9,7 +9,7 @@
 
 set -e
 
-_MODE="$(basename ${0} | awk -F- '{ print $2 }')"
+_MODE="$(basename ${0} | sed -e 's|^git-||' -e 's|-[a-z]$||')"
 
 if [ ! -e debian/changelog ]
 then

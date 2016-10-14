@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: git-stuff@packages.debian.org\n"
-"POT-Creation-Date: 2012-09-28 16:27+0200\n"
+"POT-Creation-Date: 2012-11-13 18:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,20 +39,14 @@ msgid ""
 msgstr ""
 
 #. Type: string
-#. Default
-#: ../git-stuff.templates:3001
-msgid "/srv/git"
-msgstr ""
-
-#. Type: string
 #. Description
-#: ../git-stuff.templates:3002
+#: ../git-stuff.templates:3001
 msgid "Git directories:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../git-stuff.templates:3002
+#: ../git-stuff.templates:3001
 msgid ""
 "Please specify the directory or directories (space separated) used as root "
 "for the Git repositories on the server. Note that git-repack-repositories "
@@ -60,26 +54,20 @@ msgid ""
 msgstr ""
 
 #. Type: string
-#. Default
-#: ../git-stuff.templates:4001
-msgid "@monthly"
-msgstr ""
-
-#. Type: string
 #. Description
-#: ../git-stuff.templates:4002
+#: ../git-stuff.templates:4001
 msgid "Git cron job scheduling:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../git-stuff.templates:4002
+#: ../git-stuff.templates:4001
 msgid "Please choose when the cron job should be started."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../git-stuff.templates:4002
+#: ../git-stuff.templates:4001
 msgid ""
 "See crontab(5) for the format definition. If it is left empty, the default "
 "value \"@monthly\" (without the quotes) will be used, executing the cron job "
