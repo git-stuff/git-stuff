@@ -19,12 +19,12 @@ set -e
 set -u
 
 REPODIR=`readlink -f "$PWD"`
-PROJECTROOT=`git repo-config hooks.projectroot`
+PROJECTROOT=`git config hooks.projectroot`
 REPOREL=${REPODIR#$PROJECTROOT}
 REPOREL=${REPODIR#/srv/git.debian.org/git/}
 REPOREL=${REPOREL#/srv/alioth.debian.org/chroot/home/}
 REPOREL=${REPOREL/\/public_git\//\/}
-BASEURL="`git repo-config hooks.baseurl`"
+BASEURL="`git config hooks.baseurl`"
 BASEURL="${BASEURL:-http://git.debian.org/}"
 BASEURL="${BASEURL}?p=$REPOREL"
 

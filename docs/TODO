@@ -1,7 +1,6 @@
-* write manpages
-* add git commit hooks
+* write remaining manpages
+* add some git commit hooks
 * expose git repack/git gc options used in git-repack-repositories through debconf
 * rework commit hooks and use consistent configuration options.
-* update workflow documents and type them in sisu.
-* add script to create and keep updated chroots
+* update workflow documents
 * add example gitignore files (that ignore debhelper packaging stuff, and other common cruft)

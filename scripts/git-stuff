@@ -22,7 +22,7 @@
 
 set -e
 
-for _CONFFILE in /etc/default/git-stuff ~/.git-stuff.conf
+for _CONFFILE in /etc/default/git-stuff /etc/default/git-stuff.d/* ~/.git-stuff ~/.git-stuff.d/*
 do
 	if [ -e "${_CONFFILE}" ]
 	then
