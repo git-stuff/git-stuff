@@ -14,4 +14,4 @@ COMMIT="${2}"
 
 TAG="$(echo ${VERSION} | sed -e 's|~|_|g')"
 
-git tag -s -S -f -m "Tagging upstream version ${VERSION}." upstream/${TAG} ${COMMIT}
+git tag -s -f -m "Tagging upstream version ${VERSION}." upstream/${TAG} ${COMMIT}

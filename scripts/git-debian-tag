@@ -16,4 +16,4 @@ _HASH="${2}"
 
 _TAG="$(echo ${_VERSION} | sed -e "s|^${_MODE}/||" -e 's|~|_|g')"
 
-git tag -s -S -f -m "Tagging ${_MODE} version ${_VERSION}." ${_MODE}/${_TAG} ${_HASH}
+git tag -s -f -m "Tagging ${_MODE} version ${_VERSION}." ${_MODE}/${_TAG} ${_HASH}
