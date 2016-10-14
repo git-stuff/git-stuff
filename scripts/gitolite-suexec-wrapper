@@ -1,0 +1,19 @@
+#!/bin/sh
+
+for _CONFFILE in /etc/default/lxc /etc/default/lxc.d/*
+do
+	if [ -e ${_CONFFILE} ]
+	then
+		. ${_CONFFILE} || true
+	fi
+done
+
+if [ -z "${GIT_PROJECT_ROOT}" ] || [ -z "${GITOLITE_HTTP_HOME}" ]
+then
+	echo "E: GIT_PROJECT_ROOT and GITOLITE_HTTP_HOME need to be set in /etc/default/gitolite."
+	exit 1
+fi
+
+export GIT_PROJECT_ROOT GITOLITE_HTTP_HOME
+
+exec /usr/share/gitolite/gl-auth-command ${1}

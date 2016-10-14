@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: git-stuff 19-1\n"
-"POT-Creation-Date: 2013-10-17 09:55+0300\n"
+"POT-Creation-Date: 2014-01-13 13:28+0100\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <mail@daniel-baumann.ch>\n"
 "Language-Team: none\n"
@@ -28,15 +28,15 @@ msgstr "GIT-STUFF"
 #: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
 #: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "2013-10-17"
-msgstr "17.10.2013"
+msgid "2014-01-13"
+msgstr ""
 
 #. type: TH
 #: en/git-amend-all.1:9 en/git-checkout-branches.1:9
 #: en/git-cherry-pick-recursive.1:9 en/git-commit-lazy.1:9
 #: en/git-debian-add.1:9 en/git-stuff.7:9 en/git-whoami.1:9
 #, no-wrap
-msgid "19-1"
+msgid "20-1"
 msgstr ""
 
 #. type: TH
