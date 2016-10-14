@@ -1,3 +1,9 @@
+git-stuff (22-1) unstable; urgency=low
+
+  * Dropping -S from git tag calls.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Thu, 24 Jul 2014 07:57:13 +0200
+
 git-stuff (21-1) unstable; urgency=low
 
   * Adding --show-signature to appropriate git shortcuts.
