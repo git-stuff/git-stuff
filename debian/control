@@ -5,7 +5,7 @@ Maintainer: Daniel Baumann <mail@daniel-baumann.ch>
 Uploaders: Andrew Lee (李健秋) <ajqlee@debian.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.4
-Homepage: http://www.daniel-baumann.ch/software/git-stuff/
+Homepage: http://daniel-baumann.ch/software/git-stuff/
 
 Package: git-stuff
 Architecture: all

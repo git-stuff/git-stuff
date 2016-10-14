@@ -1,3 +1,10 @@
+git-stuff (18-1) experimental; urgency=low
+
+  * Shortening links to upstream homepage.
+  * Correcting spelling typo in git-debian-add manpage.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 11 Jun 2013 17:49:23 +0200
+
 git-stuff (17-1) experimental; urgency=low
 
   * Adding git-extras to suggests.

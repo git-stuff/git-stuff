@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: git-stuff
 Upstream-Contact: Daniel Baumann <mail@daniel-baumann.ch>
-Source: http://www.daniel-baumann.ch/files/software/git-stuff/
+Source: http://daniel-baumann.ch/files/software/git-stuff/
 
 Files: *
 Copyright: 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
