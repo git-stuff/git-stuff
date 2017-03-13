@@ -60,7 +60,7 @@ Last-Update: 2017-03-13
  fi
 --- a/scripts/git-upstream-tar
 +++ b/scripts/git-upstream-tar
-@@ -12,6 +12,23 @@
+@@ -12,6 +12,18 @@
  TARBALL="${1}"
  TARBALLS="${@}"
  
@@ -76,15 +76,10 @@ Last-Update: 2017-03-13
 +    UPSTREAM=upstream
 +fi
 +
-+if [ -z "${VERSION}" ]; then
-+	echo "Usage: $0 VERSION"
-+	exit 1
-+fi
-+
  if [ -z "${TARBALLS}" ]; then
  	echo "Usage: ${0} upstream_1.2.3.orig.tar.xz [upstream_1.2.3.orig-foo.tar.xz] [upstream_1.2.3.orig-bar.tar.xz] [...]"
  	exit 1
-@@ -23,5 +40,5 @@
+@@ -23,5 +35,5 @@
  do
  	echo "P: Adding pristine-tar version ${VERSION} (${_TARBALL})."
  
